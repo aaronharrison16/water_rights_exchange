@@ -1,0 +1,11 @@
+<%= form_for @post do |f| %>
+
+  <%= f.text_area :title %>
+  <%= f.number_field :available %>
+  <%= f.number_field :price %>
+  <%= f.text_area :address %>
+  <%= f.text_area :location %>
+
+  <%= f.submit 'Save' %>
+
+<% end %>
