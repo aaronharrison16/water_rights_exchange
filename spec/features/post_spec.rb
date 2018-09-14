@@ -2,23 +2,26 @@ require 'rails_helper'
 
 describe 'navigate' do
   describe 'index' do
-    it 'can be reached successfully' do
+    before do 
       visit posts_path
+    end
+    it 'can be reached successfully' do
       expect(page.status_code).to eq(200)
     end
 
     it 'has a title of Posts' do
-      visit posts_path
       expect(page).to have_content(/Posts/)
     end
   end
 end
 
 describe 'creation' do
-  before do 
+  before do
+    user = User.create(email: "test@test.com", password: "password", password_confirmation: "password", first_name: "Ron", last_name: "Swanson")
+    login_as(user, :scope => :user) 
     visit new_post_path
   end
-  
+
   it 'has a new form that can be reached' do 
     expect(page.status_code).to eq(200)
   end
@@ -32,5 +35,16 @@ describe 'creation' do
     click_on 'Save'
 
     expect(page).to have_content("Test Title")
+  end
+
+  it 'will have a user associated it' do
+    fill_in 'post[title]', with: 'User Title'
+    fill_in 'post[available]', with: '88'
+    fill_in 'post[price]', with: '1800'
+    fill_in 'post[address]', with: "123 West Any Street"
+    fill_in 'post[location]', with: 'Any Location'
+    click_on 'Save'
+
+    expect(User.last.posts.last.title).to eq("User Title")
   end
 end

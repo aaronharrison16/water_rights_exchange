@@ -4,3 +4,6 @@ end
 
 puts '50 posts created'
 
+User.create!(email: "test@user.com", password: 'password', password_confirmation: 'password', first_name: 'Ron', last_name: 'Swanson')
+
+puts 'test user created'
