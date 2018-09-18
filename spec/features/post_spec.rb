@@ -8,16 +8,12 @@ describe 'navigate' do
     it 'can be reached successfully' do
       expect(page.status_code).to eq(200)
     end
-
-    it 'has a title of Posts' do
-      expect(page).to have_content(/Posts/)
-    end
   end
 end
 
 describe 'creation' do
   before do
-    user = User.create(email: "test@test.com", password: "password", password_confirmation: "password", first_name: "Ron", last_name: "Swanson")
+    user = FactoryBot.create(:user)
     login_as(user, :scope => :user) 
     visit new_post_path
   end
