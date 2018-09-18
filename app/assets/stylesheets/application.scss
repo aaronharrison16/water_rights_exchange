@@ -1,1 +1,14 @@
 @import 'bootstrap';
+
+.nav-image {
+  height: 25px;
+}
+
+.custom-card {
+  margin-bottom: 25px;
+  padding: 15px;
+}
+
+.custom-card :hover {
+  backgroud-color: blue;
+}
