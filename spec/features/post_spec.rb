@@ -8,14 +8,6 @@ describe 'navigate' do
     it 'can be reached successfully' do
       expect(page.status_code).to eq(200)
     end
-
-    it 'can be reached by clicking edit on index page' do
-      post = FactoryBot.create(:post)
-      visit posts_path
-
-      click_link("edit_#{@post.id}")
-      expect(page.status_code).to eq(200)
-    end
   end
 end
 
@@ -50,15 +42,5 @@ describe 'creation' do
     click_on 'Save'
 
     expect(User.last.posts.last.title).to eq("User Title")
-  end
-end
-
-describe 'delete' do
-  it 'can be deleted' do
-    @post = FactoryBot.create(:post)
-    visit posts_path
-
-    click_link("delete_post_#{@post.id}_from_index")
-    expect(page.status_code).to eq(200)
   end
 end
