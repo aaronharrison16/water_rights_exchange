@@ -7,6 +7,17 @@
   <% end %>
 
   <div class="form-group">
+    <h4>What is the purpose of your ad?</h4>
+    <br>
+
+    <%= f.radio_button :purpose, 'buy' %>
+    <%= f.label :purpose, 'Buying' %>
+
+    <%= f.radio_button :purpose, 'sell' %>
+    <%= f.label :purpose, 'Selling' %>
+  </div>
+
+  <div class="form-group">
     <label for="title" class="control-label">Description:</label>
     <%= f.text_area :title, class: 'form-control', id: 'title' %>  
   </div>
@@ -35,6 +46,17 @@
   <div class="form-group">
     <label for="address" class="control-label">Where is the water used?</label>
     <%= f.text_area :address, class: 'form-control', id: 'address' %>  
+  </div>
+
+  <div class="form-group">
+    <%= f.radio_button :status, 'submitted' %>
+    <%= f.label :status, 'Submitted' %>
+
+    <%= f.radio_button :status, 'approved' %>
+    <%= f.label :status, 'Approved' %>
+
+    <%= f.radio_button :status, 'rejected' %>
+    <%= f.label :status, 'Rejected' %>
   </div>
          
   <div class="col-md-4 mb-3">

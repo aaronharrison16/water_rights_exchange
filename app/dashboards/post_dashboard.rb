@@ -18,6 +18,7 @@ class PostDashboard < Administrate::BaseDashboard
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
     status: Field::String.with_options(searchable: false),
+    purpose: Field::String.with_options(searchable: false),
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -28,6 +29,8 @@ class PostDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :user,
     :title,
+    :status,
+    :purpose
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES

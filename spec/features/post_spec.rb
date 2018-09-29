@@ -44,3 +44,13 @@ describe 'creation' do
     expect(User.last.posts.last.title).to eq("User Title")
   end
 end
+
+describe 'delete' do
+  it 'can be deleted' do
+    @post = FactoryBot.create(:post)
+    visit post_path(@post)
+
+    click_link("delete_post_#{@post.id}_from_index")
+    expect(page.status_code).to eq(200)
+  end
+end

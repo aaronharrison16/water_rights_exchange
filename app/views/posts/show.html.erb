@@ -1,1 +1,5 @@
 <%= @post.inspect %>
+
+
+<%= link_to 'Edit', edit_post_path %>
+<%= link_to 'Delete', post_path, method: :delete, id: "delete_post_#{@post.id}_from_index", data: { confirm: 'Are you sure?' } %>

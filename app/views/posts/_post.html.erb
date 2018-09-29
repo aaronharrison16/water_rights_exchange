@@ -1,7 +1,12 @@
 <div class='col-md-4'>
-  <div class="card custom-card btn">
+  <div class="card custom-card">
+    <% if post.purpose == 'sell' %>
+      <h3 class="alert alert-primary">WATER FOR SALE</h3>
+    <% else %>
+      <h3 class="alert alert-success">WATER WANTED</h3>
+    <% end %>
     <h2>
-      <%= post.title %>
+      <%= link_to post.title, post_path(post), class: 'card-link' %>
     </h2>
     <div class='card-body'>
       <p class='card-text'>
