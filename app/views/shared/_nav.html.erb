@@ -24,12 +24,7 @@
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" id="dropdown05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Account</a>
         <div class="dropdown-menu account" aria-labelledby="dropdown05">
-          <% if current_user %>
-            <%= link_to "Edit Account", edit_user_registration_path, class: 'dropdown-item' %>
-            <%= link_to "Logout", destroy_user_session_path, method: :delete, class: 'dropdown-item' %>
-          <% else %>
-            <%= link_to "Login", new_user_session_path, class: 'dropdown-item' %>
-          <% end %>
+          <%= login_helper %>
         </div>
       </li>
     </ul>

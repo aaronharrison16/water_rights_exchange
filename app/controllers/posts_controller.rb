@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
 
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  access all: [:show, :index], user: :all, site_admin: :all
 
   def index
     @posts = Post.all
@@ -26,9 +27,12 @@ class PostsController < ApplicationController
   end
 
   def edit
+    authorize @post
   end
 
   def update
+    authorize @post
+
     if @post.update(post_params)
       redirect_to @post, notice: 'Your post was updated successfully'
     else
