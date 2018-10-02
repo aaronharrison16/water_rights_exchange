@@ -20,6 +20,7 @@
         Shares Available: <%= post.available %>
       </p>                    
       <small class='text-muted'>Posted on: <%= post.created_at.strftime('%m-%d-%Y') %></small>
+      <%= status_label post.status %>      
     </div>
   </div>
 </div>
