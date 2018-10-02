@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'static#homepage'
 
+  get 'my-listings', action: :my_posts, controller: 'posts', as: 'my_posts'
 end
