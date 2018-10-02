@@ -8,7 +8,7 @@ class PostsController < ApplicationController
   end
 
   def my_posts
-    @my_posts = current_user.posts
+    @posts = Post.posts_by current_user
   end
 
   def new
@@ -51,7 +51,7 @@ class PostsController < ApplicationController
 
   private
     def post_params
-      params.require(:post).permit(:title, :available, :price, :address, :location, :status)
+      params.require(:post).permit(:title, :available, :price, :address, :location, :status, :purpose)
     end
 
     def set_post

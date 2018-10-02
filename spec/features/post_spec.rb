@@ -40,6 +40,7 @@ describe 'creation' do
   end
 
   it 'will have a user associated it' do
+    choose 'buy'
     fill_in 'post[title]', with: 'User Title'
     fill_in 'post[available]', with: '88'
     fill_in 'post[price]', with: '1800'
@@ -55,12 +56,13 @@ describe 'edit' do
     before do
       @edit_user = User.create(first_name: "asdf", last_name: "asdf", email: "asdfasdf@asdf.com", password: "asdfasdf", password_confirmation: "asdfasdf")
       login_as(@edit_user, :scope => :user)
-      @edit_post = Post.create(title: "asdfasdf", available: 12, price: 1500, address: "123 West Any Street", location: "Any Location", user_id: @edit_user.id )
+      @edit_post = Post.create(title: "asdfasdf", available: 12, price: 1500, address: "123 West Any Street", location: "Any Location", user_id: @edit_user.id, purpose: 1 )
     end
 
     it 'can be edited' do
-      visit edit_post_path(@edit_post)
+      visit edit_post_path(@edit_post.id)
 
+      choose 'buy'
       fill_in 'post[title]', with: 'Edited content'
       fill_in 'post[available]', with: '88'
       fill_in 'post[price]', with: '1800'

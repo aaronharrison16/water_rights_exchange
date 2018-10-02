@@ -5,6 +5,7 @@ FactoryBot.define do
     price 1500 
     address "123 West Any Street"
     location "Any Location" 
+    purpose 0
     user
   end
 
@@ -14,6 +15,7 @@ FactoryBot.define do
     price 1500 
     address "123 West Any Street"
     location "Any Location" 
+    purpose 1
     user
   end
 end

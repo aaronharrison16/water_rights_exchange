@@ -6,16 +6,8 @@
     <% end %>
   <% end %>
 
-  <div class="form-group">
-    <h4>What is the purpose of your ad?</h4>
-    <br>
 
-    <%= f.radio_button :purpose, 'buy' %>
-    <%= f.label :purpose, 'Buying' %>
-
-    <%= f.radio_button :purpose, 'sell' %>
-    <%= f.label :purpose, 'Selling' %>
-  </div>
+    <%= render partial: 'purpose', locals: { f: f } %>
 
   <div class="form-group">
     <label for="title" class="control-label">Description:</label>
@@ -49,17 +41,6 @@
   </div>
 
   <%= render partial: 'status', locals: { f: f } if current_user.type == 'AdminUser' %>
-         
-  <div class="col-md-4 mb-3">
-    <label for="state">State</label>
-    <select class="custom-select d-block w-100" id="state" required>
-      <option value="">Choose...</option>
-      <option>California</option>
-    </select>
-    <div class="invalid-feedback">
-      Please provide a valid state.
-    </div>
-  </div>
 
   <%= f.submit 'Save', class: "btn btn-primary btn-lg btn-block" %>
 
