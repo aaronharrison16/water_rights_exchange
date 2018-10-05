@@ -1,6 +1,7 @@
 @import 'bootstrap';
 @import 'gritter';
 @import "bourbon";
+@import "admin_homepage.css";
 
 .nav-image {
   height: 25px;
@@ -29,4 +30,12 @@
 
 .card-link :hover {
   color: red;
+}
+
+.show-container {
+  padding-top: 45px;
+}
+
+.show-item {
+  padding: 15px;
 }

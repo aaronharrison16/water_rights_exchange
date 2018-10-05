@@ -10,7 +10,7 @@ class PostsController < ApplicationController
   def my_posts
     forbidden! if current_user.role == 'guest'
 
-    @posts = Post.posts_by current_user
+    @posts = Post.posts_by(current_user)
   end
 
   def new

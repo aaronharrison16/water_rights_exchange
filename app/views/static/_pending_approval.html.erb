@@ -1,0 +1,37 @@
+<div class="row">
+  <% @pending_approvals.each do |pending_approval| %>
+    <div class='col-md-4'>
+      <div class="card custom-card">
+        <% if pending_approval.purpose == 'sell' %>
+          <h3 class="alert alert-primary">WATER FOR SALE</h3>
+        <% else %>
+          <h3 class="alert alert-success">WATER WANTED</h3>
+        <% end %>
+        <h2>
+          <%= link_to pending_approval.title, post_path(pending_approval), class: 'card-link' %>
+        </h2>
+        <div class='card-body'>
+          <p class='card-text'>
+            Region: <%= pending_approval.location %>
+          </p> 
+          <p class='card-text'>
+            $<%= pending_approval.price %> <small class="text-muted">/ per share</small>
+          </p>
+
+          <p class='card-text'>
+            Shares Available: <%= pending_approval.available %>
+          </p>
+
+          <div class='row'>
+            <div class='col-md-6 column'>
+              <%= link_to 'Approve', root_path, class: 'btn btn-success btn-block' %>
+            </div>
+            <div class='col-md-6 column'>
+              <%= link_to 'Review', root_path, class: 'btn btn-secondary btn-block' %>
+            </div>
+          </div>                         
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

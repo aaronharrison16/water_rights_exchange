@@ -1,5 +1,27 @@
-<%= @post.inspect %>
+<div class="card-deck mb-3 text-center show-container">
+  <div class="card mb-4 box-shadow">
+    <div class="card-header">
+      <h4 class="my-0 font-weight-normal">
+        <% if @post.purpose == 'buy' %>
+          Water Wanted
+        <% else %>
+          Water for Sale
+        <% end %>
+      </h4>
+    </div>
+    <div class="card-body">
+      <h1 class="card-title pricing-card-title">$<%= @post.price %> <small class="text-muted">/ per share</small></h1>
+      <ul class="list-unstyled mt-3 mb-4">
+        <li class="show-item">Shares Available: <%= @post.available %></li>
+        <li class="show-item"><%= @post.address %></li>
+        <li class="show-item"><%= @post.location %></li>
+        <li class="show-item"><%= @post.title %></li>
+      </ul>
+    </div>
+  </div>
+</div>
+  <div>TODO*** SELLER INFORMATION</div>
 
 
-<%= link_to 'Edit', edit_post_path if policy(@post).update? %>
-<%= link_to 'Delete', post_path, method: :delete, id: "delete_post_#{@post.id}_from_index", data: { confirm: 'Are you sure?' } %>
+  <%= link_to 'Edit', edit_post_path if policy(@post).update? %>
+  <%= link_to 'Delete', post_path, method: :delete, id: "delete_post_#{@post.id}_from_index", data: { confirm: 'Are you sure?' } %>
