@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
 
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-  access all: [:show, :index], user: :all, site_admin: :all
+  access all: [:show, :index], user: {except: [:destroy]}, site_admin: :all
 
   def index
     @posts = Post.approved
@@ -49,7 +49,7 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post.delete
+    authorize @post.delete
     redirect_to posts_path, notice: 'Your post has been deleted.'
   end
 
