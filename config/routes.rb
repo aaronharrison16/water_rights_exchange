@@ -7,9 +7,14 @@ Rails.application.routes.draw do
 
       root to: "users#index"
     end
-  resources :posts
   devise_for :users
   root to: 'static#homepage'
+  
+  resources :posts do 
+    member do 
+      get :approve
+    end
+  end
 
   get 'my-listings', action: :my_posts, controller: 'posts', as: 'my_posts'
 end
