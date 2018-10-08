@@ -53,41 +53,41 @@ describe 'creation' do
 end
 
 describe 'edit' do
-    before do
-      @edit_user = User.create(first_name: "asdf", last_name: "asdf", email: "asdfasdf@asdf.com", password: "asdfasdf", password_confirmation: "asdfasdf")
-      login_as(@edit_user, :scope => :user)
-      @edit_post = Post.create(title: "asdfasdf", available: 12, price: 1500, address: "123 West Any Street", location: "Any Location", user_id: @edit_user.id, purpose: 1 )
-    end
-
-    it 'can be edited' do
-      visit edit_post_path(@edit_post.id)
-
-      choose 'buy'
-      fill_in 'post[title]', with: 'Edited content'
-      fill_in 'post[available]', with: '88'
-      fill_in 'post[price]', with: '1800'
-      fill_in 'post[address]', with: "123 West Any Street"
-      fill_in 'post[location]', with: 'Any Location'
-      click_on 'Save'
-
-      expect(page).to have_content("Edited content")
-    end
-
-    it 'cannot be edited by a non authorized user' do
-      logout(:user)
-      non_authorized_user = FactoryBot.create(:non_authorized_user)
-      login_as(non_authorized_user, :scope => :user)
-
-      visit edit_post_path(@edit_post)
-
-      expect(current_path).to eq(root_path)
-    end
-
-    it 'can not be edited by a guest user' do
-      logout(:user)
-
-      visit edit_post_path(@edit_post)
-    
-      expect(current_path).to eq(root_path)
-    end
+  before do
+    @edit_user = User.create(first_name: "asdf", last_name: "asdf", email: "asdfasdf@asdf.com", password: "asdfasdf", password_confirmation: "asdfasdf")
+    login_as(@edit_user, :scope => :user)
+    @edit_post = Post.create(title: "asdfasdf", available: 12, price: 1500, address: "123 West Any Street", location: "Any Location", user_id: @edit_user.id, purpose: 1 )
   end
+
+  it 'can be edited' do
+    visit edit_post_path(@edit_post.id)
+
+    choose 'buy'
+    fill_in 'post[title]', with: 'Edited content'
+    fill_in 'post[available]', with: '88'
+    fill_in 'post[price]', with: '1800'
+    fill_in 'post[address]', with: "123 West Any Street"
+    fill_in 'post[location]', with: 'Any Location'
+    click_on 'Save'
+
+    expect(page).to have_content("Edited content")
+  end
+
+  it 'cannot be edited by a non authorized user' do
+    logout(:user)
+    non_authorized_user = FactoryBot.create(:non_authorized_user)
+    login_as(non_authorized_user, :scope => :user)
+
+    visit edit_post_path(@edit_post)
+
+    expect(current_path).to eq(root_path)
+  end
+
+  it 'can not be edited by a guest user' do
+    logout(:user)
+
+    visit edit_post_path(@edit_post)
+  
+    expect(current_path).to eq(root_path)
+  end
+end

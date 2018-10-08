@@ -8,6 +8,10 @@ class PostPolicy < ApplicationPolicy
     admin?
   end  
 
+  def delete? 
+    return true if user_or_admin
+  end
+
   private
 
     def user_or_admin

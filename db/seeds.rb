@@ -1,4 +1,4 @@
-AdminUser.create!(email: "admin@user.com", password: 'password', password_confirmation: 'password', first_name: 'Admin', last_name: 'User')
+AdminUser.create!(email: "admin@user.com", password: 'password', password_confirmation: 'password', first_name: 'Admin', last_name: 'User', roles: 'site_admin')
 
 puts 'admin user created'
 

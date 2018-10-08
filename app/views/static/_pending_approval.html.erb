@@ -7,9 +7,7 @@
         <% else %>
           <h3 class="alert alert-success">WATER WANTED</h3>
         <% end %>
-        <h2>
-          <%= link_to pending_approval.title, post_path(pending_approval), class: 'card-link' %>
-        </h2>
+
         <div class='card-body'>
           <p class='card-text'>
             Region: <%= pending_approval.location %>
@@ -20,6 +18,10 @@
 
           <p class='card-text'>
             Shares Available: <%= pending_approval.available %>
+          </p>
+
+          <p>
+            Description: <%= pending_approval.title %>
           </p>
 
           <div class='row'>
