@@ -2,9 +2,9 @@ AdminUser.create!(email: "admin@user.com", password: 'password', password_confir
 
 puts 'admin user created'
 
-User.create!(email: "aaronharrison@waterrightexchange.com", password: 'password', password_confirmation: 'password', first_name: 'Aaron', last_name: 'Harrison')
+User.create!(email: "aaronharrison@waterrightexchange.com", password: 'password', password_confirmation: 'password', first_name: 'Aaron', last_name: 'Harrison', phone: '3333333333')
 
-@user = User.create!(email: "test@user.com", password: 'password', password_confirmation: 'password', first_name: 'Ron', last_name: 'Swanson')
+@user = User.create!(email: "test@user.com", password: 'password', password_confirmation: 'password', first_name: 'Ron', last_name: 'Swanson', phone: '5555555555')
 
 puts '2 test users created'
 

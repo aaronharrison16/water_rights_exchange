@@ -3,6 +3,11 @@
 @import "bourbon";
 @import "admin_homepage.css";
 
+html,
+body {
+  font-family: 'Noto Sans', sans-serif;  
+}
+
 .nav-image {
   height: 25px;
 }
@@ -64,4 +69,8 @@
 
 .nav-link:hover {
   cursor: pointer;
+}
+
+.posted-by-card {
+  padding-top: 10px;
 }
