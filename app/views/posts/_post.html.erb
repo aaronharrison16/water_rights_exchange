@@ -1,25 +1,31 @@
 <div class='col-md-4'>
-  <div class="card custom-card">
-    <% if post.purpose == 'sell' %>
-      <h3 class="alert alert-primary">WATER FOR SALE</h3>
-    <% else %>
-      <h3 class="alert alert-success">WATER WANTED</h3>
-    <% end %>
-    <h2>
-      <%= link_to post.title, post_path(post), class: 'card-link' %>
-    </h2>
-    <div class='card-body'>
-      <p class='card-text'>
-        Region: <%= post.location %>
-      </p> 
-      <p class='card-text'>
-        Price per Share: $<%= post.price %>
-      </p>
+  <%= link_to post_path(post), class: 'no-hover' do %>
+    <div class="card custom-card">
+      <% if post.purpose == 'sell' %>
+        <h3 class="alert alert-primary">WATER FOR SALE</h3>
+      <% else %>
+        <h3 class="alert alert-success">WATER WANTED</h3>
+      <% end %>
+      
+      <div class='card-body'>
+        <p class='card-text'>
+          Region: <%= post.location %>
+        </p> 
+        <p class='card-text'>
+          $<%= post.price %> <small class="text-muted">/ per share</small>
+        </p>
 
-      <p class='card-text'>
-        Shares Available: <%= post.available %>
-      </p>                    
-      <small class='text-muted'>Posted on: <%= post.created_at.strftime('%m-%d-%Y') %></small>
+        <p class='card-text'>
+          Shares Available: <%= post.available %>
+        </p>
+
+        <p>
+          Description: <%= post.title %>
+        </p>   
+
+        <small class='text-muted'>Posted on: <%= post.created_at.strftime('%m-%d-%Y') %></small>
+        <%= status_label post.status %>      
+      </div>
     </div>
-  </div>
+  <% end %>
 </div>

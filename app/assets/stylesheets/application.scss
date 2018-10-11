@@ -1,6 +1,12 @@
 @import 'bootstrap';
 @import 'gritter';
 @import "bourbon";
+@import "admin_homepage.css";
+
+html,
+body {
+  font-family: 'Noto Sans', sans-serif;  
+}
 
 .nav-image {
   height: 25px;
@@ -9,10 +15,21 @@
 .custom-card {
   margin-bottom: 25px;
   padding: 15px;
+  color: black;
+  text-decoration: none;
 }
 
-.custom-card :hover {
-  backgroud-color: blue;
+.custom-card:hover {
+  text-decoration: none!important;
+  background-color: #f3fbfc;
+ }
+
+.custom-card a:link:hover {
+  background-color: #f3fbfc;
+ }
+
+.no-hover:hover {
+  text-decoration: none!important;
 }
 
 .edit {
@@ -27,6 +44,38 @@
   color: black;
 }
 
-.card-link :hover {
-  color: red;
+.card-link:hover {
+  color: #999999;
+}
+
+.show-container {
+  padding-top: 45px;
+}
+
+.show-item {
+  padding: 15px;
+}
+
+.custom-icon {
+  color: grey;
+  font-size: 1.4em;
+  padding: 8px;
+}
+
+.custom-icon:hover {
+  color: #999999;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  cursor: pointer;
+}
+
+.posted-by-card {
+  padding-top: 10px;
+}
+
+.alert-custom {
+  padding: 4px;
+  margin-left: 25px;
 }

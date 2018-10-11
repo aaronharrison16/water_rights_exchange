@@ -1,13 +1,21 @@
 class PostsController < ApplicationController
 
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
-  access all: [:show, :index], user: :all, site_admin: :all
+  before_action :set_post, only: [:show, :edit, :update, :destroy, :approve]
+  access all: [:show, :index], user: {except: [:approve]}, site_admin: :all
 
   def index
-    @posts = Post.all
+    @posts = Post.approved
+  end
+
+  def my_posts
+    forbidden! if current_user.role == 'guest'
+
+    @posts = Post.posts_by(current_user)
   end
 
   def new
+    forbidden! if current_user.role == 'guest'
+
     @post = Post.new
   end
 
@@ -41,13 +49,18 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post.delete
     redirect_to posts_path, notice: 'Your post has been deleted.'
+  end
+
+  def approve
+    authorize @post
+    @post.approved!
+    redirect_to root_path, notice: 'This post has been approved.'
   end
 
   private
     def post_params
-      params.require(:post).permit(:title, :available, :price, :address, :location, :status)
+      params.require(:post).permit(:title, :available, :price, :address, :location, :status, :purpose)
     end
 
     def set_post

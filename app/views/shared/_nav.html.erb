@@ -14,12 +14,7 @@
         <%= link_to "Listings", posts_path, class: 'nav-link' %>
       </li>
 
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" id="dropdown05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">My Listings</a>
-        <div class="dropdown-menu" aria-labelledby="dropdown05">
-          <%= link_to "New Listing", new_post_path, class: 'dropdown-item' %>
-        </div>
-      </li>
+      <%= render 'shared/my_listings' %>
 
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" id="dropdown05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Account</a>
