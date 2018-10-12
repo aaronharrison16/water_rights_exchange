@@ -12,11 +12,23 @@
           Region: <%= post.location %>
         </p> 
         <p class='card-text'>
-          $<%= post.price %> <small class="text-muted">/ per share</small>
+          $<%= post.price %> 
+
+          <small class="text-muted">
+            <% if post.water_type == 'acre_foot' %>
+              / per share
+            <% else %>
+              / per acre foot
+            <% end %>
+          </small>
         </p>
 
         <p class='card-text'>
-          Shares Available: <%= post.available %>
+          <% if post.water_type == 'acre_foot' %>
+            Acre Feet Available: <%= post.available %>
+          <% else %>
+            Shares Available: <%= post.available %>
+          <% end %>
         </p>
 
         <p>

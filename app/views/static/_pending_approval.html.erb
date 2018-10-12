@@ -13,11 +13,23 @@
             Region: <%= pending_approval.location %>
           </p> 
           <p class='card-text'>
-            $<%= pending_approval.price %> <small class="text-muted">/ per share</small>
+            $<%= pending_approval.price %> 
+
+            <small class="text-muted">
+              <% if pending_approval.water_type == 'acre_foot' %>
+                / per share
+              <% else %>
+                / per acre foot
+              <% end %>
+            </small>
           </p>
 
           <p class='card-text'>
-            Shares Available: <%= pending_approval.available %>
+            <% if pending_approval.water_type == 'acre_foot' %>
+              Acre Feet Available: <%= pending_approval.available %>
+            <% else %>
+              Shares Available: <%= pending_approval.available %>
+            <% end %>
           </p>
 
           <p>
