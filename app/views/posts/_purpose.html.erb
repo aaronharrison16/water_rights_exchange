@@ -1,10 +1,10 @@
-<div class="form-group col-md-12">
-  <span>
-    <h5 class="mb-3">What is the purpose of your ad?</h5>
-    <%= f.radio_button :purpose, 'buy', id: 'buy' %>
-    <%= f.label :purpose, 'Buying', class: 'radio-button' %>
 
-    <%= f.radio_button :purpose, 'sell', id: 'sell' %>
-    <%= f.label :purpose, 'Selling', class: 'radio-button' %>
-  </span>
-</div>
+  <div class='inputGroup col-md-4'>
+    <%= f.radio_button :purpose, 'buy', id: 'buy', name: "radio" %>
+    <%= f.label :purpose, 'Water Wanted', for: 'buy' %>
+  </div>
+
+  <div class="inputGroup col-md-4">
+    <%= f.radio_button :purpose, 'sell', id: 'sell', name: "radio" %>
+    <%= f.label :purpose, 'Water for Sale', for: 'sell' %>
+  </div>
