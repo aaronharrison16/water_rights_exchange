@@ -6,6 +6,7 @@ FactoryBot.define do
     address "123 West Any Street"
     location "Any Location" 
     purpose 0
+    water_type 0
     user
   end
 
@@ -16,6 +17,7 @@ FactoryBot.define do
     address "123 West Any Street"
     location "Any Location" 
     purpose 1
+    water_type 1
     user
   end
 end
