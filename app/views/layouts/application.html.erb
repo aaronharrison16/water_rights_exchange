@@ -17,14 +17,14 @@
   </head>
 
   <body class="container" id="background">
-    <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-12">
-            <%= render 'shared/nav' %>
-            <%= yield %>
-          </div>
+    
+      <div class="row">
+        <div class="col-md-12">
+          <%= render 'shared/nav' %>
+          <%= yield %>
         </div>
       </div>
+    
     <%= render 'shared/alerts' %>
   </body>
 </html>
