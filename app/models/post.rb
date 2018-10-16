@@ -6,4 +6,8 @@ class Post < ApplicationRecord
   validates_presence_of :title, :available, :price, :address, :location, :water_type, :purpose
 
   scope :posts_by, ->(user) { where(user_id: user.id )}
+
+  def self.recent
+    order("created_at DESC")
+  end
 end

@@ -4,13 +4,13 @@ class PostsController < ApplicationController
   access all: [:show, :index], user: {except: [:approve]}, site_admin: :all
 
   def index
-    @posts = Post.approved
+    @posts = Post.approved.recent
   end
 
   def my_posts
     forbidden! if current_user.role == 'guest'
 
-    @posts = Post.posts_by(current_user)
+    @posts = Post.posts_by(current_user).recent
   end
 
   def new
