@@ -1,5 +1,7 @@
-<% if current_user.try(:type) == 'AdminUser' %>
-  <%= render 'admin' %>
-<% else %>
-  <%= render 'user' %>
-<% end %>
+<body id="static-background">
+  <% if current_user.try(:type) == 'AdminUser' %>
+    <%= render 'admin' %>
+  <% else %>
+    <%= render 'user' %>
+  <% end %>
+</body>

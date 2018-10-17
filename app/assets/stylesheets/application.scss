@@ -9,6 +9,11 @@ body {
   font-family: 'Noto Sans', sans-serif;
 }
 
+#static-background {
+  background: image-url('mountain-lake.jpg');
+  background-size: cover;
+}
+
 #background {
   background-color: #8aacc8;
 }
