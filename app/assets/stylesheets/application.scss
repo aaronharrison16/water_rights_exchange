@@ -6,7 +6,7 @@
 html,
 body {
   height: 100%;
-  font-family: 'Noto Sans', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   background-color: #90caf9;
 }
 
@@ -240,12 +240,12 @@ html {
 #homepage-card {
   position: relative;
   width: 80%;
-  margin-top: -10%;
+  margin-top: -20%;
   margin-left:auto;
   margin-right:auto;
 }
 
-#what-we-do {
+#what-we-do-body {
   width: 50%;
   margin-left: 5%;
   padding: 5px;
@@ -262,3 +262,14 @@ html {
 #admin-homepage {
   margin: 10px;
 }
+
+@media (max-width: 576px) { 
+  #homepage-card {
+    width:100%;
+    padding: 10px;
+  }
+
+  #what-we-do-body {
+    width: 80%;
+  }
+ }
