@@ -1,7 +1,8 @@
+<img src="assets/mountain-lake.jpg" id="mountain-lake">
 
-<div class="card inner cover my-5">
-  <h3 class="display-4 text-center mt-5">Water Right Exchange</h3>
-  <p class="lead text-center m-4">We are dedicated to being your one stop shop for buying and selling water rights in the state of Utah.</p>
+<div class="card" id='homepage-card'>
+  <h3 class="display-4 text-center mt-5">Utah Water Right Exchange</h3>
+  <p class="lead text-center m-4">As the only water right brokerage service in the State of Utah, we serve as a clearing house for water rights. It is our goal to establish a market place where water rights can be bought and sold at a fair price.</p>
   <hr class="my-4">
   <p class="text-center mb-5">
     <%= link_to 'View Listings', posts_path, class: 'btn btn-custom mr-2' %>
@@ -11,4 +12,12 @@
       <%= link_to "Create a Listing", new_post_path, class: 'btn btn-secondary' %>
     <% end %>
   </p>
-</div
+
+  <div>
+    <h3 class=" ml-4 homepage-heading">Our Mission:</h3>
+
+    <p class="lead ml-5" id="what-we-do">
+      Utah Water Right Exchange was created to gather enough information on the sale of individual water rights, so a market price range can be disclosed. Using this information, we hope to establish a fair market price, so both the buyer and seller are satisfied.
+    </p>
+  </div>
+</div>

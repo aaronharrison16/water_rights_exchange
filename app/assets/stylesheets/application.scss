@@ -7,10 +7,7 @@ html,
 body {
   height: 100%;
   font-family: 'Noto Sans', sans-serif;
-  background: image-url('abstract-art-background-696644.jpg') no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  width: auto;
+  background-color: #90caf9;
 }
 
 #background {
@@ -27,12 +24,7 @@ body {
   background-size: cover;
 }
 
-#mountain-lake {
-  width: 100%
-
-}
-
-.nav-image {
+#nav-image {
   height: 30px;
 }
 
@@ -234,4 +226,39 @@ input[type=number]::-webkit-outer-spin-button {
 
 html {
   box-sizing: border-box;
+}
+
+
+/* images */
+
+#mountain-lake {
+  position: relative;
+  width: 100%;
+  overflow:hidden;
+}
+
+#homepage-card {
+  position: relative;
+  width: 80%;
+  margin-top: -10%;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+#what-we-do {
+  width: 50%;
+  margin-left: 5%;
+  padding: 5px;
+}
+
+.homepage-heading {
+  width: 200px;
+  background-color: #bbdefb;
+  padding:9px;
+  border-radius:25px;
+  text-align: center;
+}
+
+#admin-homepage {
+  margin: 10px;
 }
