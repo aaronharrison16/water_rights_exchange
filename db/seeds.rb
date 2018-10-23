@@ -84,13 +84,14 @@ divisions_list = [
 [ 8, 'Rush Valley'],
 [ 8, 'Davis County']]
 
+divisions_list.each do |region_id, division|
+  Division.create!(region_id: region_id, name: division)
+end
+
+puts 'divisions created'
+
 case Rails.env
 when 'development'
-  divisions_list.each do |region_id, division|
-    Division.create!(region_id: region_id, name: division)
-  end
-
-  puts 'divisions created'
 
   AdminUser.create!(email: "admin@user.com", password: 'password', password_confirmation: 'password', first_name: 'Admin', last_name: 'User', roles: 'site_admin', phone: '4564564561')
 
