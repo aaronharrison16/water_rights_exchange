@@ -9,6 +9,7 @@ FactoryBot.define do
     email { generate :email }
     password "password"
     password_confirmation "password"
+    phone 5555555555
     roles "user"
   end
 
@@ -18,6 +19,7 @@ FactoryBot.define do
     email { generate :email }
     password "password"
     password_confirmation "password"
+    phone 5555555555
     roles "site_admin"
   end
 
@@ -25,6 +27,7 @@ FactoryBot.define do
     first_name 'Non'
     last_name 'Authorized'
     email { generate :email }
+    phone 5555555555
     password "asdfasdf"
     password_confirmation "asdfasdf"
   end

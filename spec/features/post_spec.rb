@@ -57,7 +57,7 @@ end
 
 describe 'edit' do
   before do
-    @edit_user = User.create(first_name: "asdf", last_name: "asdf", email: "asdfasdf@asdf.com", password: "asdfasdf", password_confirmation: "asdfasdf")
+    @edit_user = User.create(first_name: "asdf", last_name: "asdf", email: "asdfasdf@asdf.com", password: "asdfasdf", password_confirmation: "asdfasdf", phone: '5555555555')
     login_as(@edit_user, :scope => :user)
     @edit_post = Post.create(title: "asdfasdf", available: 12, price: 1500, address: "123 West Any Street", location: "Any Location", user_id: @edit_user.id, purpose: 1, water_type: 0 )
   end
