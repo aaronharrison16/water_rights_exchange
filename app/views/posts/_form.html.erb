@@ -29,12 +29,15 @@
   </div>
 
   <div class="row">
-    <div class="mb-3 col-md-12">
-      <label for="location" class="control-label">Share Region:</label>
-      <%= f.text_area :location, class: 'form-control', id: 'location' %>  
+    <div class="field">
+      <%= f.label :region_id %><br />
+      <%= f.collection_select :region_id, Region.order(:name), :id, :name, include_blank: true %>
+    </div>
+    <div class="field">
+      <%= f.label :division_id, "Division" %><br />
+      <%= f.grouped_collection_select :division_id, Region.order(:name), :divisions, :name, :id, :name, include_blank: true %>
     </div>
   </div>
-
 
 
   <div class="row">
@@ -43,10 +46,6 @@
       <%= f.text_area :title, class: 'form-control', id: 'title' %>  
     </div>
   </div>
-  
-
-  
-
   
   <div class="row">
     <div class="mb-3 col-md-12">
