@@ -14,6 +14,7 @@
 //= require bootstrap
 //= require gritter
 //= require rails-ujs
+//= require turbolinks
 //= require activestorage
 //= require popper
 //= require_tree .
