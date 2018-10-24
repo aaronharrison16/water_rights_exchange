@@ -29,15 +29,15 @@
   </div>
 
   <div class="row">
-    <div class="field">
-      <%= f.label :region_id %><br />
-      <%= f.collection_select :region_id, Region.order(:name), :id, :name, include_blank: true %>
+    <div class="col-md-3 my-3 mr-3">
+      <%= f.collection_select( :region_id, Region.order(:name), :id, :name, {:include_blank => "Select Region"}, class: 'btn btn-secondary' )%>
     </div>
-    <div class="field">
-      <%= f.label :division_id, "Division" %><br />
-      <%= f.grouped_collection_select :division_id, Region.order(:name), :divisions, :name, :id, :name, include_blank: true %>
+
+     <div class="col-md-4 my-3">
+      <%= f.grouped_collection_select :division_id, Region.order(:name), :divisions, :name, :id, :name, {:include_blank => "Select Division"}, class: 'btn btn-secondary' %>
     </div>
   </div>
+
 
 
   <div class="row">

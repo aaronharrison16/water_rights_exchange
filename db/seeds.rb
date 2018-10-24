@@ -104,11 +104,11 @@ when 'development'
   puts '2 test users created'
 
   50.times do |post|
-    Post.create!(title: "Test Title #{post}", available: 12, price: 1500, address: "123 West Any Street", location: "Any Location", user_id: @user.id, purpose: 'buy', water_type: 'acre_foot' )
+    Post.create!(title: "Test Title #{post}", available: 12, price: 1500, address: "123 West Any Street", user_id: @user.id, purpose: 'buy', water_type: 'acre_foot', division_id: 1, region_id: 1 )
   end
 
   50.times do |post|
-    Post.create!(title: "Test Title User 2 #{post}", available: 12, price: 1500, address: "123 West Any Street", location: "Any Location", user_id: @user_2.id, purpose: 'buy', water_type: 'share' )
+    Post.create!(title: "Test Title User 2 #{post}", available: 12, price: 1500, address: "123 West Any Street", user_id: @user_2.id, purpose: 'buy', water_type: 'share', division_id: 3, region_id: 1 )
   end
 
   puts '100 posts created'

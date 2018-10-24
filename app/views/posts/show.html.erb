@@ -1,43 +1,45 @@
-<div class="card-deck mb-3 text-center show-container">
-  <div class="card mb-4 box-shadow">
-    <div class="card-header">
-      <h4 class="my-0 font-weight-normal">
-        <%= render 'shared/post_purpose' %>
-      </h4>
-    </div>
-    <div class="card-body">
-      <div>
-        <h1 class="card-title pricing-card-title">$<%= @post.price %> <small class="text-muted">/ per share</small></h1>
-        <ul class="list-unstyled mt-3 mb-4">
-          <li class="show-item">Shares Available: <%= @post.available %></li>
-          <li class="show-item"><%= @post.address %></li>
-          <li class="show-item"><%= @post.location %></li>
-          <li class="show-item"><%= @post.title %></li>
-        </ul>
+<div class="container">
+  <div class="card-deck mb-3 text-center show-container">
+    <div class="card mb-4 box-shadow">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">
+          <%= render 'shared/post_purpose' %>
+        </h4>
       </div>
+      <div class="card-body">
+        <div>
+          <h1 class="card-title pricing-card-title my-1">$<%= @post.price %> <small class="text-muted">/ per share</small></h1>
+          <ul class="list-unstyled mt-3 mb-4">
+            <li class="show-item">Shares Available: <%= @post.available %></li>
+            <li class="show-item">Water Location: <%= @post.region.name %>, <%= @post.division.name %></li>
+            <li class="show-item"><%= @post.address %></li>
+            <li class="show-item"><%= @post.title %></li>
+          </ul>
+        </div>
 
-      <div class="float-right">
-        <%= link_to '', edit_post_path, class: "fas fa-edit custom-icon" if policy(@post).update? %>
-        <%= link_to '', post_path, method: :delete, id: "delete_post_#{@post.id}_from_index", data: { confirm: 'Are you sure?' }, class: "fas fa-trash custom-icon " if policy(@post).delete? %>
+        <div class="float-right">
+          <%= link_to '', edit_post_path, class: "fas fa-edit custom-icon" if policy(@post).update? %>
+          <%= link_to '', post_path, method: :delete, id: "delete_post_#{@post.id}_from_index", data: { confirm: 'Are you sure?' }, class: "fas fa-trash custom-icon " if policy(@post).delete? %>
+        </div>
       </div>
     </div>
-  </div>
-</div
+  </div
 
-<div class="card-deck mb-3 text-center show-container">
-  <div class="card mb-4 box-shadow">
-    <div class="card-header">
-      <h4 class="my-0 font-weight-normal">
-        Posted by: <%= @post.user.full_name %>
-      </h4>
+  <div class="card-deck mb-3 text-center show-container">
+    <div class="card mb-4 box-shadow">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">
+          Posted by: <%= @post.user.full_name %>
+        </h4>
 
-      <h5 class="posted-by-card">
-        Email: <%= @post.user.email %>
-      </h5>
- 
-      <h5 class="posted-by-card">
-        Phone: <%= number_to_phone((@post.user.phone).to_i, area_code: true) %>
-      </h5>
+        <h5 class="posted-by-card">
+          Email: <%= @post.user.email %>
+        </h5>
+   
+        <h5 class="posted-by-card">
+          Phone: <%= number_to_phone((@post.user.phone).to_i, area_code: true) %>
+        </h5>
+      </div>
     </div>
   </div>
 </div>

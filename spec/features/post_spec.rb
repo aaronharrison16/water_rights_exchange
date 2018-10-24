@@ -31,11 +31,12 @@ describe 'creation' do
   it 'can be created from the new form page' do
     choose 'post_purpose_buy'
     choose 'share'
+    select('Eastern', :from => 'post_region_id')
+    select('Daggett', :from => 'post_division_id')
     fill_in 'post[title]', with: 'Test Title'
     fill_in 'post[available]', with: '88'
     fill_in 'post[price]', with: '1800'
     fill_in 'post[address]', with: "123 West Any Street"
-    fill_in 'post[location]', with: 'Any Location'
     click_on 'Save'
 
     expect(page).to have_content("Test Title")
@@ -48,7 +49,6 @@ describe 'creation' do
     fill_in 'post[available]', with: '88'
     fill_in 'post[price]', with: '1800'
     fill_in 'post[address]', with: "123 West Any Street"
-    fill_in 'post[location]', with: 'Any Location'
     click_on 'Save'
 
     expect(User.last.posts.last.title).to eq("User Title")
@@ -59,7 +59,7 @@ describe 'edit' do
   before do
     @edit_user = User.create(first_name: "asdf", last_name: "asdf", email: "asdfasdf@asdf.com", password: "asdfasdf", password_confirmation: "asdfasdf", phone: '5555555555')
     login_as(@edit_user, :scope => :user)
-    @edit_post = Post.create(title: "asdfasdf", available: 12, price: 1500, address: "123 West Any Street", location: "Any Location", user_id: @edit_user.id, purpose: 1, water_type: 0 )
+    @edit_post = Post.create(title: "asdfasdf", available: 12, price: 1500, address: "123 West Any Street", user_id: @edit_user.id, purpose: 1, water_type: 0 )
   end
 
   it 'can be edited' do

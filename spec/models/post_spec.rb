@@ -33,11 +33,5 @@ RSpec.describe Post, type: :model do
 
       expect(@post).to_not be_valid
     end
-
-    it 'cannot be created without location' do 
-      @post.location = nil
-
-      expect(@post).to_not be_valid
-    end
   end
 end

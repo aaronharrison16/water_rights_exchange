@@ -4,9 +4,10 @@ FactoryBot.define do
     available 12
     price 1500 
     address "123 West Any Street"
-    location "Any Location" 
     purpose 0
     water_type 0
+    division_id 3
+    region_id 1
     user
   end
 
@@ -15,9 +16,10 @@ FactoryBot.define do
     available 12
     price 1500 
     address "123 West Any Street"
-    location "Any Location" 
     purpose 1
     water_type 1
+    division_id 3
+    region_id 1
     user
   end
 end
