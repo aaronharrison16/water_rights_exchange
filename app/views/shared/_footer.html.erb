@@ -1,47 +1,49 @@
-<hr>
-<div class="container footer-item">
-  <footer class="page-footer font-small blue pt-4">
-    <div class="container-fluid text-center text-md-left">
-      <div class="row">
-        <div class="col-md-6 mb-md-0 mb-3 text-center">
-          <h5 class="text-uppercase">explore</h5>
+<div class="custom-footer">
+  <hr>
+  <div class="container footer-item">
+    <footer class="page-footer font-small blue pt-4">
+      <div class="container-fluid text-center text-md-left">
+        <div class="row">
+          <div class="col-md-6 mb-md-0 mb-3 text-center">
+            <h5 class="text-uppercase">explore</h5>
+            
+            <ul class="list-unstyled">
+              <li>
+                <%= link_to 'Home', root_path, class: 'footer-item' %>
+              </li>
+              <li>
+                <%= link_to 'Listings', posts_path, class: 'footer-item' %>
+              </li>
+              <li>
+                <%= link_to 'Sign Up', new_user_registration_path, class: 'footer-item' %>
+              </li>
+            </ul>
+          </div>
+                  
+          <hr class="clearfix w-100 d-md-none pb-3">
+
+          <div class="col-md-6 mb-md-0 mb-3 text-center">
+            <h5 class="text-uppercase">contact</h5>
+            <ul class="list-unstyled">
+              <li>
+                aaron.harrison.j@gmail.com
+              </li>
+              <li>
+                Phone: (435) 243-4634
+              </li>
+              <li>
+                <a href="http://www.aaronjharrison.com/" class="footer-item">Check out my other work</a>
+              </li>
+            </ul>
+          </div>
+
           
-          <ul class="list-unstyled">
-            <li>
-              <%= link_to 'Home', root_path, class: 'footer-item' %>
-            </li>
-            <li>
-              <%= link_to 'Listings', posts_path, class: 'footer-item' %>
-            </li>
-            <li>
-              <%= link_to 'Sign Up', new_user_registration_path, class: 'footer-item' %>
-            </li>
-          </ul>
-        </div>
-                
-        <hr class="clearfix w-100 d-md-none pb-3">
-
-        <div class="col-md-6 mb-md-0 mb-3 text-center">
-          <h5 class="text-uppercase">contact</h5>
-          <ul class="list-unstyled">
-            <li>
-              aaron.harrison.j@gmail.com
-            </li>
-            <li>
-              Phone: (435) 243-4634
-            </li>
-            <li>
-              <a href="http://www.aaronjharrison.com/" class="footer-item">Check out my other work</a>
-            </li>
-          </ul>
         </div>
 
-        
+        <div class="footerfooter-copyright text-center py-3">© 2018 |
+          <a class="footer-item" href="http://www.aaronjharrison.com/portfolios/">Aaron Harrison</a>
+        </div>
       </div>
-
-      <div class="footerfooter-copyright text-center py-3">© 2018 |
-        <a class="footer-item" href="http://www.aaronjharrison.com/portfolios/">Aaron Harrison</a>
-      </div>
-    </div>
-  </footer>
+    </footer>
+  </div>
 </div>
