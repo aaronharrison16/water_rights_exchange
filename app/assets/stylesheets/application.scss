@@ -256,8 +256,14 @@ html {
   padding: 5px;
 }
 
+#what-you-do-body {
+  width: 50%;
+  margin-left: 55%;
+  padding: 5px;
+}
+
 .homepage-heading {
-  width: 200px;
+  width: 275px;
   background-color: #bbdefb;
   padding:9px;
   border-radius:25px;
@@ -275,6 +281,10 @@ html {
   }
 
   #what-we-do-body {
+    width: 80%;
+  }
+
+  #what-you-do-body {
     width: 80%;
   }
  }
