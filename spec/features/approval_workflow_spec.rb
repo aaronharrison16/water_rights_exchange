@@ -11,14 +11,6 @@ describe 'navigate' do
       @post = FactoryBot.create(:post)
     end
 
-    it 'has a status that can be edited on the form' do
-      visit edit_post_path(@post)
-      choose('post_status_approved')
-      click_on "Save"
-
-      expect(@post.reload.status).to eq('approved')
-    end
-
     it 'status cannot be edited by a non admin user' do 
       logout (:user)
       user = FactoryBot.create(:user)

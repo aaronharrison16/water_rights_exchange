@@ -31,7 +31,7 @@ describe 'creation' do
   it 'can be created from the new form page' do
     choose 'post_purpose_buy'
     choose 'share'
-    select('Eastern', :from => 'post_region_id')
+    find('#post_region_id').find(:xpath, 'option[2]').select_option
     select('Daggett', :from => 'post_division_id')
     fill_in 'post[title]', with: 'Test Title'
     fill_in 'post[available]', with: '88'
@@ -59,7 +59,7 @@ describe 'edit' do
   before do
     @edit_user = User.create(first_name: "asdf", last_name: "asdf", email: "asdfasdf@asdf.com", password: "asdfasdf", password_confirmation: "asdfasdf", phone: '5555555555')
     login_as(@edit_user, :scope => :user)
-    @edit_post = Post.create(title: "asdfasdf", available: 12, price: 1500, address: "123 West Any Street", user_id: @edit_user.id, purpose: 1, water_type: 0 )
+    @edit_post = Post.create(title: "asdfasdf", available: 12, price: 1500, address: "123 West Any Street", user_id: @edit_user.id, purpose: 1, water_type: 1, region_id: 1, division_id: 1 )
   end
 
   it 'can be edited' do

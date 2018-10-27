@@ -6,8 +6,8 @@ FactoryBot.define do
     address "123 West Any Street"
     purpose 0
     water_type 0
-    division_id 3
     region_id 1
+    division_id 3
     user
   end
 
@@ -18,8 +18,8 @@ FactoryBot.define do
     address "123 West Any Street"
     purpose 1
     water_type 1
-    division_id 3
     region_id 1
+    division_id 3
     user
   end
 end
