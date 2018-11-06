@@ -10,6 +10,10 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarsExample05">
       <ul class="navbar-nav ml-auto">
+        <li class= '<%= active?(root_path) %>'>
+          <%= link_to "Home", root_path, class: 'nav-link' %>
+        </li>
+
         <li class= '<%= active?(posts_path) %>'>
           <%= link_to "Listings", posts_path, class: 'nav-link' %>
         </li>
