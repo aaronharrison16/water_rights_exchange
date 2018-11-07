@@ -225,8 +225,10 @@ html {
 #custom-footer {
   position: relative;
   bottom: 0;
-  border-top: 6px solid #bbdefb;
+  background-color: #bbdefb;
   margin-top: 200px;
+  box-shadow: 0px -1px 5px;
+  background-color: #bbdefb;
 }
 
 .footer-item {
@@ -291,5 +293,9 @@ html {
 
   #what-you-do-body {
     width: 80%;
+  }
+
+  #custom-footer {
+    margin-top: 0px;
   }
  }
