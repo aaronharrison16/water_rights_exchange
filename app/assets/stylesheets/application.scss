@@ -343,3 +343,9 @@ html {
   font-size: 0.9em;
  }
 }
+
+.carousel-inner .carousel-item {
+  transition: -webkit-transform 2s ease;
+  transition: transform 2s ease;
+  transition: transform 2s ease, -webkit-transform 2s ease;
+}
