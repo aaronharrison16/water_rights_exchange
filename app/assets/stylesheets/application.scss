@@ -7,7 +7,16 @@ html,
 body {
   height: 100%;
   font-family: 'Montserrat', sans-serif;
-  background-color: #90caf9;
+  background-color: #f8f9fa;
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  font-family: 'Roboto', sans-serif;
 }
 
 #background {
@@ -27,8 +36,6 @@ body {
 #nav-image {
   height: 30px;
 }
-
-
 
 .custom-card {
   margin-bottom: 25px;
@@ -247,14 +254,20 @@ html {
   position: relative;
   width: 100%;
   overflow:hidden;
+  box-shadow: 0px 1px 10px;
 }
 
-#homepage-card {
+#homepage-header {
+  background-color: white;
+  border-radius: 250px;
+  padding: 15px;
   position: relative;
   width: 80%;
   margin-top: -20%;
   margin-left:auto;
   margin-right:auto;
+  box-shadow: 0px 1px 10px;
+
 }
 
 #what-we-do-body {
@@ -275,6 +288,11 @@ html {
   padding:9px;
   border-radius:25px;
   text-align: center;
+}
+
+#homepage-body {
+  position: absolute;
+  top: 709px;
 }
 
 #admin-homepage {
@@ -298,4 +316,24 @@ html {
   #custom-footer {
     margin-top: 0px;
   }
+
+  #homepage-heading {
+    border-radius: 25px;
+  }
  }
+
+ @media (max-width: 768px) {
+  #homepage-header {
+    border-radius: 10px;
+  }
+
+  #homepage-body {
+  position: absolute;
+  top: 60%;
+  }
+ }
+
+.post-index {
+  padding-right: 30px;
+  padding-left: 30px;
+}
