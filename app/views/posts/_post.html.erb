@@ -1,6 +1,6 @@
-<div class='col-md-3'>
+<div class='col-lg-3 custom-card hvr-float'>
   <%= link_to post_path(post), class: 'no-hover' do %>
-    <div class="card custom-card">
+    <div id="custom-card-content">
       <% if post.purpose == 'sell' %>
         <h3 class="alert alert-primary">WATER FOR SALE</h3>
       <% else %>

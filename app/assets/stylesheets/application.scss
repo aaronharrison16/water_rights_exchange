@@ -37,12 +37,14 @@ h6, .h6 {
   height: 30px;
 }
 
-.custom-card {
-  margin-bottom: 25px;
+#custom-card-content {
   padding: 15px;
   color: black;
   text-decoration: none;
-  box-shadow: 5px 5px 12px #c6d1ce;
+}
+
+.custom-card {  
+  border: 1px solid #DBDBDB;
 }
 
 .custom-card:hover {
@@ -253,7 +255,6 @@ html {
   position: relative;
   width: 100%;
   overflow:hidden;
-  box-shadow: 0px 1px 10px;
 }
 
 #homepage-header {
@@ -334,8 +335,8 @@ html {
  }
 
 .post-index {
-  padding-right: 30px;
-  padding-left: 30px;
+  padding-right: 2px;
+  padding-left: 2px;
 }
 
 @media (max-width: 400px) {
@@ -348,4 +349,23 @@ html {
   transition: -webkit-transform 2s ease;
   transition: transform 2s ease;
   transition: transform 2s ease, -webkit-transform 2s ease;
+}
+
+/* Float */
+.hvr-float {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-float:hover, .hvr-float:focus, .hvr-float:active {
+  -webkit-transform: translateY(-15px);
+  transform: translateY(-15px);
 }
