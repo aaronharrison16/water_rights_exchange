@@ -21,8 +21,6 @@
   <body>
     <%= yield %>
     <%= render 'shared/alerts' %>
-    <%= render 'shared/footer' %>
+    <%= render "shared/footer" unless @skip_footer %>
   </body>
-  
-
 </html>

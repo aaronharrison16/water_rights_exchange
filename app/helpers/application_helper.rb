@@ -14,4 +14,8 @@ module ApplicationHelper
       (link_to "Logout", destroy_user_session_path, method: :delete, class: 'dropdown-item')
     end
   end
+
+  def non_footer_action
+    @skip_footer = true
+  end
 end
