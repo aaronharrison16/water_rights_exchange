@@ -108,6 +108,7 @@ h6, .h6 {
 .btn-custom {
   background-color: #4dd0e1;
   color: white;
+  border-radius: 25px;
 }
 
 .btn-custom:hover {
@@ -359,4 +360,8 @@ html {
 .hvr-float:hover, .hvr-float:focus, .hvr-float:active {
   -webkit-transform: translateY(-15px);
   transform: translateY(-15px);
+}
+
+.form-control-custom {
+  border-radius: 25px;
 }

@@ -18,13 +18,13 @@
         <div class="input-group-prepend">
           <span class="input-group-text">$</span>
         </div>
-        <%= f.number_field :price, class: 'form-control', id: 'price' %>     
+        <%= f.number_field :price, class: 'form-control form-control-custom', id: 'price' %>     
       </div>
     </div>
 
     <div class="mb-3 col-md-6">
       <label for="available" class="control-label">Available:</label>
-      <%= f.number_field :available, class: 'form-control', :step => :any, id: 'available' %>  
+      <%= f.number_field :available, class: 'form-control form-control-custom', :step => :any, id: 'available' %>  
     </div>
   </div>
 
@@ -38,19 +38,17 @@
     </div>
   </div>
 
-
-
   <div class="row">
     <div class="mb-3 col-md-12">
       <label for="title" class="control-label">Description:</label>
-      <%= f.text_area :title, class: 'form-control', id: 'title' %>  
+      <%= f.text_area :title, class: 'form-control form-control-custom', id: 'title' %>  
     </div>
   </div>
   
   <div class="row">
     <div class="mb-3 col-md-12">
       <label for="address" class="control-label">Where is the water used?</label>
-      <%= f.text_area :address, class: 'form-control', id: 'address' %>  
+      <%= f.text_area :address, class: 'form-control form-control-custom', id: 'address' %>  
     </div>
   </div>
 
