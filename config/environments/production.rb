@@ -100,8 +100,7 @@ Rails.application.configure do
    :authentication       => :plain,
    :user_name            => ENV['gmail_username'],
    :password             => ENV['gmail_password'],
-   :openssl_verify_mode  => 'none'
+   :openssl_verify_mode  => 'none',
+   :only_path            => true
   }
-
-  ActionMailer::Base.default_url_options = { host: 'utah-water-right-exchange.herokuapp.com', protocol: 'http' }
 end
