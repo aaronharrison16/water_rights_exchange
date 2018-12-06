@@ -92,6 +92,8 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
+  config.action_mailer.default_url_options = { :host => 'utah-water-right-exchange.herokuapp.com' }
+
   config.action_mailer.delivery_method = :smtp
   # SMTP settings for gmail
   ActionMailer::Base.smtp_settings = {
@@ -100,7 +102,6 @@ Rails.application.configure do
    :authentication       => :plain,
    :user_name            => ENV['gmail_username'],
    :password             => ENV['gmail_password'],
-   :openssl_verify_mode  => 'none',
-   :only_path            => true
+   :openssl_verify_mode  => 'none'
   }
 end
