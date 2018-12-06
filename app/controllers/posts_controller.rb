@@ -26,7 +26,7 @@ class PostsController < ApplicationController
 
     if @post.save
       redirect_to @post, notice: "Your post was created successfully."
-      AdminMailer.with(user: admin_user).email.deliver_now
+      AdminMailer.with(user: admin_user.all).email.deliver_now
     else
       render :new
     end
