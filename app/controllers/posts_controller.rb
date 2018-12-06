@@ -26,7 +26,7 @@ class PostsController < ApplicationController
 
     if @post.save
       redirect_to @post, notice: "Your post was created successfully."
-      AdminMailer.email.deliver
+      AdminMailer.email.deliver_later(wait: 5.minutes)
     else
       render :new
     end
