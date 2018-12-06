@@ -116,6 +116,11 @@ h6, .h6 {
   background-color: #009faf;
 }
 
+.btn-custom a:link {
+  color: white;
+  text-decoration: none;
+}
+
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 
   -webkit-appearance: none;

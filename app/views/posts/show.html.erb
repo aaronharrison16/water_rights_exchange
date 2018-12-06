@@ -25,24 +25,39 @@
     </div>
   </div
 
-  <div class="card-deck mb-3 text-center show-container">
-    <div class="card mb-4 box-shadow">
-      <div class="card-header">
-        <h4 class="my-0 font-weight-normal">
-          Posted by: <%= @post.user.full_name %>
-        </h4>
+  <% if current_user.try(:type) == 'AdminUser' %>
+    <div class="card-deck mb-3 text-center show-container">
+      <div class="card mb-4 box-shadow">
+        <div class="card-header">
+          <h4 class="my-0 font-weight-normal">
+            Posted by: <%= @post.user.full_name %>
+          </h4>
 
-        <h5 class="posted-by-card">
-          Email: <%= @post.user.email %>
-        </h5>
-   
-        <h5 class="posted-by-card">
-          Phone: <%= number_to_phone((@post.user.phone).to_i, area_code: true) %>
-        </h5>
+          <h5 class="posted-by-card">
+            Email: <%= @post.user.email %>
+          </h5>
+     
+          <h5 class="posted-by-card">
+            Phone: <%= number_to_phone((@post.user.phone).to_i, area_code: true) %>
+          </h5>
+        </div>
       </div>
     </div>
-  </div>
+  <% else %>
+    <div class="card-deck mb-3 text-center show-container">
+      <div class="card mb-4 box-shadow">
+        <div class="card-header">
+          <h4>
+            Interested in the listing or have any questions?
+          </h4>
+          <p class="btn btn-custom btn-lg btn-block mt-3"><a href="mailto:contact@aaronjharrison.com?PortfolioContact" "Contact Seller" id="email">Contact Seller</a></p>
+        </div>
+      </div>
+    </div>
+  <% end %>
 </div>
+
+ 
 
 
 
