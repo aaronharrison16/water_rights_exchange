@@ -41,9 +41,9 @@
   <p class="text-center mb-5">
     <%= link_to 'View Listings', posts_path, class: 'btn btn-custom mr-2' %>
     <% if current_user.try(:type) == 'GuestUser' %>
-      <%= link_to "Sign In", new_user_session_path, class: 'btn btn-secondary'  %>
+      <%= link_to "Sign In", new_user_session_path, class: 'btn btn-secondary-custom'  %>
     <% else %>
-      <%= link_to "Create a Listing", new_post_path, class: 'btn btn-secondary' %>
+      <%= link_to "Create a Listing", new_post_path, class: 'btn btn-secondary-custom' %>
     <% end %>
   </p>
 </div>
