@@ -1,6 +1,6 @@
 <h1 class='alert alert-primary text-center sticky-top'><%= @conversation.subject %></h1>
 <div class='container'>
-    
+   <%= link_to '< Back to inbox', conversations_path, class: 'text-muted breadcrumb-custom' %> 
     <div class='m-3'>
         <% @messages.each do |msg| %>
             <div class= 'row'>
