@@ -9,7 +9,11 @@ Rails.application.routes.draw do
     end
   devise_for :users
   root to: 'static#homepage'
-  
+
+  resources :conversations do
+    resources :messages
+  end
+
   resources :posts do 
     member do 
       get :approve

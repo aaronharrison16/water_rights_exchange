@@ -1,0 +1,22 @@
+<div class='container'>
+    <h1><%= @conversation.subject %></h1>
+
+    <% @messages.each do |msg| %>
+        <div class= 'row'>
+            <div class="<%= msg.message.sender == current_user ? 'alert sender col-sm-6 text-right ml-auto' : 'alert receiver col-sm-6 '%>">
+                <h4><%= msg.message.sender.full_name %></h4>
+                <div><%= msg.message.body %></div> 
+            </div>
+        </div>
+    <% end %>
+
+    <%= form_tag conversation_messages_path(@conversation), method: :post do %>
+        <div> 
+            <%= text_area_tag :body, nil, class:'form-control-custom col-sm-12 mt-4' %>
+        </div>
+
+        <div class= 'row'>
+            <%= submit_tag 'Send Message', class: 'ml-auto btn btn-custom mb-5' %>
+        </div
+    <% end %>
+</div>

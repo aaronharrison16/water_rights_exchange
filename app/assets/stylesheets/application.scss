@@ -280,7 +280,7 @@ html {
 }
 
 #homepage-content {
-  postition: relative
+  position: relative
 }
 
 #what-we-do-body {
@@ -385,4 +385,20 @@ html {
 
 .form-control-custom {
   border-radius: 25px;
+}
+
+.sender {
+  background-color: #4dd0e1;
+  color: white;
+  border-radius: 40px 40px 5px 40px;
+  font-size: 1.3 em;
+  padding-left: 25px;
+}
+
+.receiver {
+  background-color: #8aacc8;
+  color: white;
+  border-radius: 40px 40px 40px 5px;
+  font-size: 1.3 em;
+  padding-left: 25px;
 }

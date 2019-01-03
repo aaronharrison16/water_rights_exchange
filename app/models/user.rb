@@ -7,6 +7,7 @@ class User < ApplicationRecord
   petergate(roles: [:site_admin, :guest], multiple: false)                             ##
   ############################################################################################ 
  
+  acts_as_messageable
 
   has_many :posts
   
@@ -16,6 +17,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   def full_name
-    last_name.upcase + ', ' + first_name.upcase
+    first_name + ' ' + last_name
   end
 end
