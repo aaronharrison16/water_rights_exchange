@@ -387,6 +387,15 @@ html {
   border-radius: 25px;
 }
 
+.form-control-custom:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+.text-field-custom {
+  padding: 15px;
+}
+
 .sender {
   background-color: #4dd0e1;
   color: white;
@@ -401,4 +410,12 @@ html {
   border-radius: 40px 40px 40px 5px;
   font-size: 1.3 em;
   padding-left: 25px;
+}
+
+.alert-primary {
+  color: #545454;
+}
+
+.message-timestamp {
+  font-size: 0.8em;
 }
