@@ -7,7 +7,7 @@
                 <div class="<%= msg.message.sender == current_user ? 'alert sender col-sm-6 text-right ml-auto' : 'alert receiver col-sm-6'%>">
                     <h4><%= msg.message.sender.full_name %></h4>
                     <h5 class=<%= msg.message.sender == current_user ? 'mr-1' : 'ml-1' %>><%= msg.message.body %></h5> 
-                    <div class='message-timestamp mt-3'><%= msg.message.created_at.strftime('%b %e, %l:%M %p') %></div>
+                    <div class='message-timestamp mt-3'><%= msg.message.created_at.localtime.strftime('%b %e, %l:%M %p') %></div>
                 </div>
             </div>
         <% end %>
