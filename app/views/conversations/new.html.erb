@@ -1,22 +1,25 @@
-<h1 class='text-center m-5 message-subject'>New Conversation</h1>
+<div>
+    <h1 class='text-center m-5 message-subject'>New Conversation</h1>
 
-<%= link_to '< Back to inbox', conversations_path, class: 'text-muted breadcrumb-custom m-5' %> 
+    <%= link_to '< Back to inbox', conversations_path, class: 'text-muted breadcrumb-custom m-5' %> 
 
-<div class='container'>
-    <div class='justify-content-center'>
-        <div class='col-lg-12'>
-            <%= form_tag conversations_path, method: :post do %>
-                <div>
-                    <%= text_field_tag :subject, nil, placeholder: 'Listing Info', class:'my-3 form-control form-control-custom' %>
-                </div>
+    <div class='container'>
+        <div class='justify-content-center'>
+            <div class='col-lg-12'>
+                <%= form_tag conversations_path, method: :post do %>
+                    <div>
+                        <%= text_field_tag :subject, nil, placeholder: 'Listing Info', class:'my-3 form-control form-control-custom' %>
+                    </div>
 
-                <div>
-                    <%= text_area_tag :body, nil, placeholder: 'Leave a comment', class:'my-4 form-control form-control-custom text-area-custom' %>
-                </div>
+                    <div>
+                        <%= text_area_tag :body, nil, placeholder: 'Leave a comment', class:'my-4 form-control form-control-custom text-area-custom' %>
+                    </div>
 
-                <%= submit_tag 'Send Message', class: 'float-right btn btn-custom'%>
-            <% end %>  
-        </div> 
+                    <%= submit_tag 'Send Message', class: 'row float-right btn btn-custom'%>
+                <% end %>  
+            </div> 
+            <br>
+        </div>
     </div>
 </div>
 
