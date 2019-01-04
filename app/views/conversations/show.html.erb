@@ -1,7 +1,9 @@
-<h1 class='alert alert-primary text-center sticky-top'><%= @conversation.subject %></h1>
-<div class='container'>
-   <%= link_to '< Back to inbox', conversations_path, class: 'text-muted breadcrumb-custom' %> 
+<div class='container mt-5'>
+
+    <%= link_to '< Back to inbox', conversations_path, class: 'text-muted breadcrumb-custom' %> 
     <div class='m-3'>
+
+        <h1 class='text-center m-5 message-subject'><%= @conversation.subject %></h1>
         <% @messages.each do |msg| %>
             <div class= 'row'>
                 <div class="<%= msg.message.sender == current_user ? 'alert sender col-sm-6 text-right ml-auto' : 'alert receiver col-sm-6'%>">
@@ -19,7 +21,7 @@
 
             <div class= 'row'>
                 <%= submit_tag 'Send Message', class: 'ml-auto btn btn-custom mb-5' %>
-            </div
+            </div>
         <% end %>
     </div>
 </div>

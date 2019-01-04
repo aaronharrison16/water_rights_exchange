@@ -423,3 +423,15 @@ html {
 .breadcrumb-custom:hover {
   text-decoration: none;
 }
+
+.messages-header {
+    position: absolute;
+    top: 58px;
+}
+
+.message-subject {
+  background-color: #bbdefb;
+  border-radius: 45px;
+  padding: 20px;
+  color: #545454;
+}
