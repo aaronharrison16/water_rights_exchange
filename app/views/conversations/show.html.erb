@@ -3,7 +3,7 @@
     <%= link_to '< Back to inbox', conversations_path, class: 'text-muted breadcrumb-custom' %> 
     <div class='m-3'>
 
-        <h1 class='text-center m-5 message-subject'><%= @conversation.subject %></h1>
+        <h1 class='text-center my-5 message-subject'><%= @conversation.subject %></h1>
         <% @messages.each do |msg| %>
             <div class= 'row'>
                 <div class="<%= msg.message.sender == current_user ? 'alert sender col-sm-6 text-right ml-auto' : 'alert receiver col-sm-6'%>">
