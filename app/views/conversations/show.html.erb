@@ -1,5 +1,6 @@
-<div class='container mt-5'>
+<% @conversation.mark_as_read(current_user) %>
 
+<div class='container mt-5'>
     <%= link_to '< Back to inbox', conversations_path, class: 'text-muted breadcrumb-custom' %> 
     <div class='m-3'>
 

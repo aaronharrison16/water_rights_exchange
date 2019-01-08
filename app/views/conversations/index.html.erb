@@ -1,21 +1,21 @@
 <div class='container'>
-<h1>Inbox</h1>
-<%= link_to 'New Conversation', new_conversation_path, class: 'btn btn-secondary-custom btn-lg btn-block mt-3' %>
+<h1 class='text-center my-5 message-subject'>Inbox</h1>
 
     <% @conversations.each do |conversation| %>
         <div class='col-lg-12 custom-card'>
-            <%= link_to conversation_path(conversation), class: 'no-hover text-center' do %>
-                <div>
-                    <div>
-                        <%= conversation.subject %>
+            <%= link_to conversation_path(conversation), class: 'p-4 no-hover inbox-item' do %>
+                <div class="<%= conversation.is_read?(current_user) ? '' : 'font-weight-bold' %>">
+                    <div class='ml-3 subject'>
+                        Subject: <%= conversation.subject %>
+                    </div>
+
+                    <div class='ml-5 mt-1'>
+                        Conversation With:
                     </div>
                 </div>
             <% end %>
         </div>
     <% end %>
+
+    <%= link_to '', new_conversation_path, class: 'fas fa-plus-circle plus-circle-custom' %>
 </div>
-
-
-
-
- 
