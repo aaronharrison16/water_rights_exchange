@@ -1,5 +1,5 @@
-<div class='container'>
-<h1 class='text-center my-5 message-subject'>Inbox</h1>
+<div class='container-fluid'>
+    <h1 class='text-center my-5 message-subject'>Inbox</h1>
 
     <% @conversations.each do |conversation| %>
         <div class='col-lg-12 custom-card'>
@@ -17,5 +17,5 @@
         </div>
     <% end %>
 
-    <%= link_to '', new_conversation_path, class: 'fas fa-plus-circle plus-circle-custom' %>
+    <%= link_to '', new_conversation_path, class: 'fas fa-comment-alt comment-custom' %>
 </div>

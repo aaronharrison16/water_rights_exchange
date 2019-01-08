@@ -440,20 +440,23 @@ html {
   color: #545454;
 }
 
-.plus-circle-custom {
-  font-size: 4.5em;
-  border-radius: 500px;
-  color: #4dd0e1;
-  background-color: white;
+.comment-custom {
+  font-size: 3em;
+  border-radius: 100%;
+  color: white;
+  padding: 14px;
+  padding-top: 22px;
+  background-color: #4dd0e1;
   position: fixed;
   bottom: 3%;
   right: 3%;
   z-index: 1;
 }
 
-.plus-circle-custom:hover {
+.comment-custom:hover {
   text-decoration: none;
-  color: #009faf;
+  background-color: #009faf;
+  color: #D1D7DC;
 }
 
 .inbox-item {
