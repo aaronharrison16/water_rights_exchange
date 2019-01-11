@@ -5,24 +5,8 @@
     <div class='m-3'>
 
         <h1 class='text-center my-5 message-subject'><%= @conversation.subject %></h1>
-        <% @messages.each do |msg| %>
-            <div class= 'row'>
-                <div class="<%= msg.message.sender == current_user ? 'alert sender col-sm-6 text-right ml-auto' : 'alert receiver col-sm-6'%>">
-                    <h4><%= msg.message.sender.full_name %></h4>
-                    <h5 class=<%= msg.message.sender == current_user ? 'mr-1' : 'ml-1' %>><%= msg.message.body %></h5> 
-                    <div class='message-timestamp mt-3'><%= msg.message.created_at.localtime.strftime('%b %e, %l:%M %p') %></div>
-                </div>
-            </div>
-        <% end %>
-
-        <%= form_tag conversation_messages_path(@conversation), method: :post do %>
-            <div> 
-                <%= text_area_tag :body, nil, class:'text-field-custom form-control-custom col-sm-12 mt-4' %>
-            </div>
-
-            <div class= 'row'>
-                <%= submit_tag 'Send Message', class: 'ml-auto btn btn-custom mb-5' %>
-            </div>
-        <% end %>
+        
+        <%= render 'messages/message' %>
+        <%= render 'messages/message_form' %>
     </div>
 </div>
