@@ -17,8 +17,10 @@ Rails.application.routes.draw do
   resources :posts do 
     member do 
       get :approve
+      get :sold
     end
   end
 
   get 'my-listings', action: :my_posts, controller: 'posts', as: 'my_posts'
+  get 'sold-listings', action: :sold_posts, controller: 'posts', as: 'sold_posts'
 end

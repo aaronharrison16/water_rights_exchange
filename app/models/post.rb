@@ -1,4 +1,5 @@
 class Post < ApplicationRecord
+  enum sale_status: { sale_pending: 0, sold: 1}
   enum purpose: { buy: 0, sell: 1 }
   enum water_type: { acre_foot: 0, share: 1 }
   enum status: { pending: 0, approved: 1, rejected: 2 }

@@ -5,13 +5,18 @@ class PostsController < ApplicationController
 
   def index
     @search = Post.search(params[:q])
-    @posts = @search.result.approved.recent
+    @posts = @search.result.approved.sale_pending.recent
   end
 
   def my_posts
     forbidden! if current_user.role == 'guest'
 
     @posts = Post.posts_by(current_user).recent
+  end
+
+  def sold_posts
+    @search = Post.search(params[:q])
+    @posts = @search.result.sold.recent
   end
 
   def new
@@ -44,20 +49,25 @@ class PostsController < ApplicationController
     authorize @post
 
     if @post.update(post_params)
-      redirect_to @post, notice: 'Your post was updated successfully'
+      redirect_to @post, notice: 'Your listing was updated successfully'
     else
       render :edit
     end
   end
 
   def destroy
-    redirect_to posts_path, notice: 'Your post has been deleted.'
+    redirect_to posts_path, notice: 'Your listing has been deleted.'
   end
 
   def approve
     authorize @post
     @post.approved!
-    redirect_to root_path, notice: 'This post has been approved.'
+    redirect_to root_path, notice: 'This listing has been approved.'
+  end
+
+  def sold
+    set_post.sold!
+    redirect_to posts_path, notice: 'This listing has been marked as sold!'
   end
 
   private
