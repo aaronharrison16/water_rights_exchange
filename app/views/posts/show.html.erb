@@ -17,10 +17,6 @@
           </ul>
         </div>
 
-        <div class='col-md-6 column admin-btn'>
-            <%= link_to 'Mark as Sold', sold_post_path(@post), class: 'btn btn-success btn-block admin-btn mb-1' %>
-        </div>
-
         <div class="float-right">
           <%= link_to '', edit_post_path, class: "fas fa-edit custom-icon" if policy(@post).update? %>
           <%= link_to '', post_path, method: :delete, id: "delete_post_#{@post.id}_from_index", data: { confirm: 'Are you sure?' }, class: "fas fa-trash custom-icon " if policy(@post).delete? %>
@@ -31,6 +27,11 @@
 
   <% if current_user.try(:type) == 'AdminUser' %>
     <%= render 'user_information' %>
+    <% if @post.sale_status == 'sale_pending' %>
+      <div>
+          <%= link_to 'Mark as Sold', sold_post_path(@post), class: 'container btn btn-mark-sold btn-block mb-1' %>
+      </div>
+    <% end %>
   <% else %>
     <div class="card-deck my-3 text-center show-container">
         <div>

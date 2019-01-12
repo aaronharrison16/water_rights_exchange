@@ -471,3 +471,18 @@ html {
 .subject {
   font-size: 2em;
 }
+
+.btn-mark-sold {
+  font-size: 1.6em;
+  background: #f44336;
+  color: white;
+  border-radius: 40px;
+  padding: 10px;
+}
+
+.btn-mark-sold:hover {
+  color: white;
+  background-color: #ba000d;
+
+
+}
