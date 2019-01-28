@@ -36,7 +36,12 @@
         </p>   
 
         <small class='text-muted'>Posted on: <%= post.created_at.strftime('%m-%d-%Y') %></small>
-        <%= status_label post.status %>      
+        <%= status_label post.status %>  
+        
+        <% if post.sale_status == 'sold' %>
+          <small class='text-muted ml-5'>Sale Date: <%= post.updated_at.strftime('%m-%d-%Y') %></small>
+          <%= status_label post.status %>
+        <% end %>
       </div>
     </div>
   <% end %>
