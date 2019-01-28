@@ -15,6 +15,6 @@ class Post < ApplicationRecord
   end
 
   def self.recent_update
-    order("updaated_at DESC")
+    order("updated_at DESC")
   end  
 end
