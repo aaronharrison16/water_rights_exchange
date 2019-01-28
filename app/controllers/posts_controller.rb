@@ -16,7 +16,7 @@ class PostsController < ApplicationController
 
   def sold_posts
     @search = Post.search(params[:q])
-    @posts = @search.result.sold.recent
+    @posts = @search.result.sold.recent_update
   end
 
   def new
