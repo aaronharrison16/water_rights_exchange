@@ -35,8 +35,13 @@
           Description: <%= truncate(post.title, :length => 25) %>
         </p>   
 
-        <small class='text-muted'>Posted on: <%= post.created_at.strftime('%m-%d-%Y') %></small>
-        <%= status_label post.status %>      
+        <% if post.sale_status == 'sold' %>
+          <h5 class='alert alert-danger'>Sale Date: <%= post.updated_at.strftime('%m-%d-%Y') %></h5>
+          <%= status_label post.status %>
+        <% else %>
+          <small class='text-muted'>Posted on: <%= post.created_at.strftime('%m-%d-%Y') %></small>
+          <%= status_label post.status %>
+        <% end %>
       </div>
     </div>
   <% end %>
