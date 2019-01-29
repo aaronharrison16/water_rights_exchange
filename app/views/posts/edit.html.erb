@@ -12,4 +12,6 @@
       </div>
     </div>
   </div>
+
+  <%= render partial: 'user_information' if current_user.type == 'AdminUser' %>
 </div>
