@@ -51,6 +51,13 @@
       <%= f.text_area :address, class: 'form-control form-control-custom', id: 'address' %>  
     </div>
   </div>
+  
+  <div class="row">
+      <div class="mb-3 col-sm-4">
+        <label for="right-number" class="control-label">Share Number: (if applicable)</label>
+        <%= f.number_field :right_number, class: 'form-control form-control-custom', id: 'right-number' %>  
+    </div>
+  </div>
 
   <%= render partial: 'status', locals: { f: f } if current_user.type == 'AdminUser' %>
 
