@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
 
   before_action :set_post, only: [:show, :edit, :update, :destroy, :approve]
-  access all: [:show, :index], user: {except: [:approve]}, site_admin: :all
+  access all: [:show, :index], user: {except: [:approve, :sold, :sold_posts]}, site_admin: :all
 
   def index
     @search = Post.search(params[:q])
