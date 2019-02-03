@@ -68,12 +68,13 @@ class PostsController < ApplicationController
 
   def sold
     set_post.sold!
+    set_post.update(sale_date: Date.today) 
     redirect_to posts_path, notice: 'This listing has been marked as sold!'
   end
 
   private
     def post_params
-      params.require(:post).permit(:title, :available, :price, :address, :status, :purpose, :water_type, :division_id, :region_id, :right_number)
+      params.require(:post).permit(:title, :available, :price, :address, :status, :purpose, :water_type, :division_id, :region_id, :right_number, :sale_date)
     end
 
     def set_post

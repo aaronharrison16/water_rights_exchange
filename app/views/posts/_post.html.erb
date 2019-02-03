@@ -36,7 +36,7 @@
         </p>   
 
         <% if post.sale_status == 'sold' %>
-          <h5 class='alert alert-danger'>Sale Date: <%= post.updated_at.strftime('%m-%d-%Y') %></h5>
+          <h5 class='alert alert-danger'>Sale Date: <%= post.sale_date %></h5>
           <%= status_label post.status %>
         <% else %>
           <small class='text-muted'>Posted on: <%= post.created_at.strftime('%m-%d-%Y') %></small>

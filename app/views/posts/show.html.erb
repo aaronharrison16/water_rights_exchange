@@ -23,7 +23,7 @@
         </div>
       </div>
     </div>
-  </div
+  </div>
 
   <% if current_user.try(:type) == 'AdminUser' %>
     <%= render 'user_information' %>
@@ -31,6 +31,14 @@
       <div>
           <%= link_to 'Mark as Sold', sold_post_path(@post), class: 'container btn btn-mark-sold btn-block mb-1' %>
       </div>
+    <% else %>
+      <%= form_for @post, class: 'form-horizontal' do |f| %>
+        <div class='row'>
+          <h4 for="date" class="control-label">Sale Date</h4>
+          <%= f.date_field :sale_date, class: 'form-control form-control-custom mb-4', id: 'date' %>
+        </div>
+        <%= f.submit 'Save', class: "btn btn-custom btn-lg btn-block mt-3" %>
+      <% end %>
     <% end %>
   <% else %>
     <div class="card-deck my-3 text-center show-container">
@@ -39,10 +47,4 @@
         </div>
     </div>
   <% end %>
-</div>
-
- 
-
-
-
-  
+</div> 
