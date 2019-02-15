@@ -6,6 +6,7 @@ class Post < ApplicationRecord
   belongs_to :user, optional: true
   belongs_to :region, optional: true
   belongs_to :division, optional: true
+  has_many :comments, dependent: :destroy
   validates_presence_of :title, :available, :price, :address, :water_type, :purpose, :division_id, :region_id
 
   scope :posts_by, ->(user) { where(user_id: user.id )}
