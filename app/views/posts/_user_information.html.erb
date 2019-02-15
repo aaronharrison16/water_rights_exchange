@@ -3,20 +3,20 @@
         <div class="card mb-4 box-shadow">
             <div class="card-header">
                 <h4 class="my-0 font-weight-normal">
-                Posted by: <%= @post.user.full_name %>
+                    Posted by: <%= @post.user.full_name %>
                 </h4>
 
                 <h5 class="posted-by-card">
-                Email: <%= @post.user.email %>
+                    Email: <%= @post.user.email %>
                 </h5>
             
                 <h5 class="posted-by-card float-left">
-                Phone: <%= number_to_phone((@post.user.phone).to_i, area_code: true) %>
+                    Phone: <%= number_to_phone((@post.user.phone).to_i, area_code: true) %>
                 </h5>
 
                 <% if @post.right_number != nil %>
                     <h5 class="posted-by-card float-right alert alert-secondary">
-                    Water Right Number: <%= @post.right_number %>
+                        Water Right Number: <%= @post.right_number %>
                     </h5>
                 <% end %>
             </div>

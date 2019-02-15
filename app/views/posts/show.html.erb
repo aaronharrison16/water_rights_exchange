@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="card-deck mb-3 text-center show-container">
+  <div class="text-center show-container">
     <div class="card mb-4 box-shadow">
       <div class="card-header">
         <h4 class="my-0 font-weight-normal">
@@ -27,19 +27,18 @@
 
   <% if current_user.try(:type) == 'AdminUser' %>
     <%= render 'user_information' %>
-    <% if @post.sale_status == 'sale_pending' %>
-      <div>
-          <%= link_to 'Mark as Sold', sold_post_path(@post), class: 'container btn btn-mark-sold btn-block mb-1' %>
+    <%= render 'sale_date' %>
+    <%= render @post.comments %>
+    <%= form_for @comment, url: '#' do |f| %>
+      <div class='form-group'>
+        <%= f.label :content %>
+        <%= f.text_area :content, class: 'form-control' %>
       </div>
-    <% else %>
-      <%= form_for @post, class: 'form-horizontal' do |f| %>
-        <div class='row'>
-          <h4 for="date" class="control-label">Sale Date</h4>
-          <%= f.date_field :sale_date, class: 'form-control form-control-custom mb-4', id: 'date' %>
-        </div>
-        <%= f.submit 'Save', class: "btn btn-custom btn-lg btn-block mt-3" %>
-      <% end %>
+
+      <%= f.submit 'Leave Comment', class: 'btn btn-custom' %>
     <% end %>
+
+        
   <% else %>
     <div class="card-deck my-3 text-center show-container">
         <div>

@@ -38,7 +38,8 @@ class PostsController < ApplicationController
   end
 
   def show
-    set_post
+    @post = Post.includes(:comments).find(params[:id])
+    @comment = Comment.new
   end
 
   def edit
