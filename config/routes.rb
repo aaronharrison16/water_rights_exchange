@@ -1,19 +1,20 @@
 Rails.application.routes.draw do
-
-  resources :comments
-  namespace :admin do
-      resources :users
-      resources :posts
-      resources :admin_users
-
-      root to: "users#index"
-    end
-  devise_for :users
-  root to: 'static#homepage'
-
   resources :conversations do
     resources :messages
   end
+
+  namespace :admin do
+    resources :users
+    resources :posts
+    resources :admin_users
+
+    root to: "users#index"
+  end
+
+  devise_for :users
+  root to: 'static#homepage'
+
+  mount ActionCable.server => '/cable'
 
   resources :posts do 
     member do 
