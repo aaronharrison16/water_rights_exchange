@@ -29,16 +29,7 @@
     <%= render 'user_information' %>
     <%= render 'sale_date' %>
     <%= render @post.comments %>
-    <%= form_for @comment, url: '#' do |f| %>
-      <div class='form-group'>
-        <%= f.label :content %>
-        <%= f.text_area :content, class: 'form-control' %>
-      </div>
-
-      <%= f.submit 'Leave Comment', class: 'btn btn-custom' %>
-    <% end %>
-
-        
+    <%= render 'comments/comment_form' %>
   <% else %>
     <div class="card-deck my-3 text-center show-container">
         <div>
