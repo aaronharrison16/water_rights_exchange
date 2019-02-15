@@ -1,6 +1,6 @@
 <%= form_tag conversation_messages_path(@conversation), method: :post do %>
     <div> 
-        <%= text_area :body, nil, class:'text-field-custom form-control-custom col-sm-12 mt-4', id:'new_message'%>
+        <%= text_area_tag :body, nil, class:'text-field-custom form-control-custom col-sm-12 mt-4', id:'new_message'%>
     </div>
 
     <div class= 'row'>
