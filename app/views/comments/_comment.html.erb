@@ -1,5 +1,4 @@
-<div class="card">
-    <div class='card-block'>
-
-    </div>
+<div class="comment-card">
+    <small class='text-muted'><%= comment.created_at.strftime('%m-%d-%Y') %>:</small>
+    <%= comment.content %>
 </div>

@@ -473,16 +473,38 @@ html {
 }
 
 .btn-mark-sold {
-  font-size: 1.6em;
-  background: #f44336;
-  color: white;
+  position: fixed;
+  right: 2%;
+  top: 10%;
+  
+  outline: none;
+  padding: .5em;
+  font-size:1.5em;
+  background: #f8f9fa;
+  width: 140px;
   border-radius: 40px;
-  padding: 10px;
+  color: $blue;
+  border: 2px solid $blue;
+  width: 8em;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  &:hover {
+    background: $blue;
+    color: white;
+  }
+  &:active {
+  letter-spacing: 3px;
+  }
 }
 
-.btn-mark-sold:hover {
-  color: white;
-  background-color: #ba000d;
+.comment-card {
+  background: white;
+  padding: 25px;
+  outline: solid 1px black;
+  font-size: 1.3em;
+}
 
-
+.comment-form {
+  margin-top: 2em;
 }
