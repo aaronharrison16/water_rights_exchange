@@ -483,14 +483,14 @@ html {
   background: #f8f9fa;
   width: 140px;
   border-radius: 40px;
-  color: $blue;
-  border: 2px solid $blue;
-  width: 8em;
+  color: #4dd0e1;
+  border: 2px solid #4dd0e1;
+  width: 10em;
   letter-spacing: 1px;
   cursor: pointer;
   transition: all 0.25s ease;
   &:hover {
-    background: $blue;
+    background: #4dd0e1;
     color: white;
   }
   &:active {
@@ -501,10 +501,10 @@ html {
 .comment-card {
   background: white;
   padding: 25px;
-  outline: solid 1px black;
+  outline: solid 1px #b8b8b8;
   font-size: 1.3em;
 }
 
 .comment-form {
-  margin-top: 2em;
+  margin-top: 1.5em;
 }

@@ -4,10 +4,10 @@
     </div>
 <% else %>
     <%= form_for @post, class: 'form-horizontal' do |f| %>
-        <div class='row'>
             <h4 for="date" class="control-label">Sale Date</h4>
-            <%= f.date_field :sale_date, class: 'form-control form-control-custom mb-4', id: 'date' %>
+        <div class='row'>
+            <%= f.date_field :sale_date, class: 'ml-3 form-control form-control-custom col-md-4', id: 'date' %>
+            <%= f.submit 'Save', class: "ml-2 btn btn-custom col-md-2" %>
         </div>
-        <%= f.submit 'Save', class: "btn btn-custom btn-lg btn-block mt-3" %>
     <% end %>
 <% end %>
