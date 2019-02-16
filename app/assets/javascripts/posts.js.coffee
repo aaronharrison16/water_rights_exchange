@@ -1,4 +1,4 @@
-jQuery -> 
+jQuery(document).on 'turbolinks:load', -> 
   divisions = $('#post_division_id').html()
   $('#post_region_id').change ->
     region = $('#post_region_id :selected').text()
