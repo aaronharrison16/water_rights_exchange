@@ -36,7 +36,8 @@
     </div>
   <% else %>
     <div class="show-container">
-      <div class='card contact-card col-md-6'>
+      <div class='col-md-6'>
+      <div class='card contact-card'>
         <h3 id='contact'>Contact</h3>
         <ul style="list-style-type:none;">
           <li>Mardell D. Topham, Water Right Broker</li>
@@ -45,9 +46,10 @@
           <li><a href="mailto:mdtopham@msn.com">Email: mdtopham@msn.com</a></li>
         </ul>
       </div>
+    
+        <h5 class='text-center mt-2'>OR</h5>
       
-      <div>
-        <%= link_to 'Message Seller', new_conversation_path, class: 'btn btn-secondary-custom btn-lg mt-3 col-md-6'  %>
+        <%= link_to 'Message Seller', new_conversation_path, class: 'btn btn-secondary-custom btn-lg col-md-12'  %>
       </div>
     </div>
   <% end %>
