@@ -1,5 +1,5 @@
 class PostApprovedMailer < ApplicationMailer
-    def email email
-        mail(to: email, subject: 'your listing has been approved')
+    def mail email
+        mail(to: email, subject: 'Your post has been approved!')
     end
 end
