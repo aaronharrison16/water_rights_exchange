@@ -65,7 +65,6 @@ class PostsController < ApplicationController
     authorize @post
     @post.approved!
     redirect_to root_path, notice: 'This listing has been approved.'
-    PostApprovedMailer.mail(@post.user.email).deliver
   end
 
   def sold

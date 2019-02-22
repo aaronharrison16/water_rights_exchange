@@ -8,7 +8,15 @@
       </div>
       <div class="card-body">
         <div>
-          <h1 class="card-title pricing-card-title my-1">$<%= @post.price %> <small class="text-muted">/ per share</small></h1>
+          <h1 class="card-title pricing-card-title my-1">$<%= @post.price %> 
+            <small class="text-muted">
+              <% if @post.water_type == 'share' %> 
+                / Share
+              <% else %>
+                / Acre Foot
+              <% end %>
+            </small>
+          </h1>
           <ul class="list-unstyled mt-3 mb-4">
             <li class="show-item">Shares Available: <%= @post.available %></li>
             <li class="show-item">Water Location: <%= @post.region.name %>, <%= @post.division.name %></li>
@@ -37,15 +45,8 @@
   <% else %>
     <div class="show-container">
       <div class='col-sm-6'>
-      <div class='card'>
-        <h3 id='contact'>Contact</h3>
-        <ul style="list-style-type:none;">
-          <li>Mardell D. Topham, Water Right Broker</li>
-          <li>Office: 801-566-8100</li>
-          <li>Mobile: 801-201-5221</li>
-          <li><a href="mailto:mdtopham@msn.com">Email: mdtopham@msn.com</a></li>
-        </ul>
-      </div>
+      
+        <%= render 'shared/contact_card'%>
     
         <h5 class='text-center mt-2'>OR</h5>
       
