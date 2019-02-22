@@ -18,7 +18,11 @@
             </small>
           </h1>
           <ul class="list-unstyled mt-3 mb-4">
-            <li class="show-item">Shares Available: <%= @post.available %></li>
+            <% if @post.water_type == 'share' %> 
+              <li class="show-item">Shares Available: <%= @post.available %></li>
+            <% else %>
+              <li class="show-item">Acre Feet Available: <%= @post.available %></li>
+            <% end %>  
             <li class="show-item">Water Location: <%= @post.region.name %>, <%= @post.division.name %></li>
             <li class="show-item"><%= @post.address %></li>
             <li class="show-item"><%= @post.title %></li>
