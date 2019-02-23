@@ -385,6 +385,12 @@ html {
 
 .form-control-custom {
   border-radius: 25px;
+  padding-left: 22px;
+  resize: none;
+}
+
+#right-number {
+  height: 2.7em
 }
 
 .form-control-custom:focus {
