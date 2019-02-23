@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_15_184603) do
+ActiveRecord::Schema.define(version: 2019_02_23_194729) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -100,7 +100,7 @@ ActiveRecord::Schema.define(version: 2019_02_15_184603) do
     t.integer "region_id"
     t.integer "division_id"
     t.integer "sale_status", default: 0
-    t.integer "right_number"
+    t.string "right_number"
     t.date "sale_date"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
