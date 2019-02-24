@@ -10,7 +10,7 @@
     <%= render partial: 'purpose', locals: { f: f } %>
 
     <div class="mb-3 col-md-6">
-      <label for="price" class="control-label">Price Per:</label>
+      <label for="price" class="control-label">Price Per</label>
       
       <%= render partial: 'water_type', locals: { f: f } %>
 
@@ -23,7 +23,7 @@
     </div>
 
     <div class="mb-3 col-md-6">
-      <label for="available" class="control-label">Rights Available:</label>
+      <label for="available" class="control-label">Rights Available</label>
       <%= f.number_field :available, class: 'form-control form-control-custom', :step => :any, id: 'available' %>  
     </div>
   </div>
@@ -40,7 +40,7 @@
 
   <div class="row">
     <div class="mb-3 col-md-12">
-      <label for="title" class="control-label">Description:</label>
+      <label for="title" class="control-label">Description</label>
       <%= f.text_area :title, class: 'form-control form-control-custom', id: 'title' %>  
     </div>
   </div>
@@ -53,9 +53,9 @@
   </div>
   
   <div class="row">
-      <div class="mb-3 col-sm-4">
-        <label for="right-number" class="control-label">Water Right Number: (if applicable)</label>
-        <%= f.text_area :right_number, class: 'form-control form-control-custom', id: 'right-number' %>  
+    <div class="mb-3 col-sm-4 right-number-group">
+      <label for="right-number" class="control-label">Water Right Number</label>
+      <%= f.text_area :right_number, class: 'form-control form-control-custom', id: 'right-number' %>  
     </div>
   </div>
 
