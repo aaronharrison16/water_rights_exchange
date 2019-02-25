@@ -59,6 +59,13 @@
     </div>
   </div>
 
+  <div class="row">
+    <div class="mb-3 col-sm-8 irrigation-company-group">
+      <label for="irrigation-company" class="control-label">Irrigation Company</label>
+      <%= f.text_area :irrigation_company, class: 'form-control form-control-custom', id: 'irrigation-company' %>  
+    </div>
+  </div>
+
   <%= render partial: 'status', locals: { f: f } if current_user.type == 'AdminUser' %>
 
   <%= f.submit 'Save', class: "btn btn-custom btn-lg btn-block mt-3" %>

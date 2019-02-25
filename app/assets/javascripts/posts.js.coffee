@@ -1,11 +1,13 @@
 jQuery(document).on 'turbolinks:load', -> 
   $('.right-number-group').hide()
+  $('.irrigation-company-group').hide()
   $('.step-radio').change ->
     if @value is "acre_foot"
       $(".right-number-group").show()
+      $(".irrigation-company-group").hide()
     else if @value is "share"
       $(".right-number-group").hide()
-
+      $(".irrigation-company-group").show()
 
 jQuery(document).on 'turbolinks:load', -> 
   divisions = $('#post_division_id').html()
