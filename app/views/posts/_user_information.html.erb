@@ -14,7 +14,7 @@
                     Phone: <%= number_to_phone((@post.user.phone).to_i, area_code: true) %>
                 </h5>
 
-                <% if @post.right_number != nil %>
+                <% if @post.right_number != "" %>
                     <h5 class="posted-by-card float-right alert alert-secondary">
                         Water Right Number: <%= @post.right_number %>
                     </h5>
