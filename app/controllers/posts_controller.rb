@@ -76,7 +76,7 @@ class PostsController < ApplicationController
 
   private
     def post_params
-      params.require(:post).permit(:title, :available, :price, :address, :status, :purpose, :water_type, :division_id, :region_id, :right_number, :sale_date)
+      params.require(:post).permit(:title, :available, :price, :address, :status, :purpose, :water_type, :division_id, :region_id, :right_number, :sale_date, :irrigation_company)
     end
 
     def set_post
