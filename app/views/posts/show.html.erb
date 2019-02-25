@@ -24,6 +24,9 @@
               <li class="show-item">Acre Feet Available: <%= @post.available %></li>
             <% end %>  
             <li class="show-item">Water Location: <%= @post.region.name %>, <%= @post.division.name %></li>
+            <% if @post.irrigation_company != ""%>
+              <li class="show-item">Irrigation Company: <%= @post.irrigation_company %></li>
+            <% end %>
             <li class="show-item"><%= @post.address %></li>
             <li class="show-item"><%= @post.title %></li>
           </ul>
