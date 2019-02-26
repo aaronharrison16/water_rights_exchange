@@ -524,32 +524,25 @@ html {
   &:hover {
     background: #4dd0e1;
     color: white;
+    letter-spacing: 2px;
   }
   &:active {
   letter-spacing: 3px;
   }
 }
 
-.btn-home-secondary {  
-  outline: none;
-  padding: .5em;
-  font-size:2.1em;
+.secondary {  
   background: #f8f9fa;;
-  width: 140px;
-  border-radius: 80px;
   color: #8aacc8;
   border: 3px solid #8aacc8;
-  width: 10em;
-  letter-spacing: 1px;
-  cursor: pointer;
-  transition: all 0.25s ease;
   &:hover {
     background: #8aacc8;
     color: white;
   }
-  &:active {
-  letter-spacing: 3px;
-  }
+}
+
+#homepage-buttons { 
+  padding-bottom: 100px;
 }
 
 .comment-card {
