@@ -17,7 +17,16 @@
   <p class="lead text-center m-4">As the best water right brokerage service in the State of Utah, we strive to serve as a one stop shop for buying and selling water rights.</p>
 </div>
  
-<div class="container-fluid" id='homepage-body'>  
+<div class="container-fluid" id='homepage-body'> 
+  <div class="text-center mb-5">
+    <%= link_to 'View Listings', posts_path, class: 'btn btn-home' %>
+    <% if current_user.try(:type) == 'GuestUser' %>
+      <%= link_to "Sign In", new_user_session_path, class: 'btn btn-home-secondary mx-4 col-md-6'  %>
+    <% else %>
+      <%= link_to "Create a Listing", new_post_path, class: 'btn btn-home-secondary mx-4 col-md-6' %>
+    <% end %>
+  </div>
+
   <div class="row" >
     <div class="col-md-6">
       <h3 class=" ml-4 homepage-heading">What We Do</h3>
