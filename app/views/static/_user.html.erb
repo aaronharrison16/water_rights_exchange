@@ -23,7 +23,7 @@
     <% if current_user.try(:type) == 'GuestUser' %>
       <%= link_to "Sign In", new_user_session_path, class: 'btn btn-home-secondary mx-4 col-md-6'  %>
     <% else %>
-      <%= link_to "Create a Listing", new_post_path, class: 'btn btn-home-secondary mx-4 col-md-6' %>
+      <%= link_to "Create a Listing", new_post_path, class: 'btn btn-home-secondary my-1 mx-4 col-md-6' %>
     <% end %>
   </div>
 
