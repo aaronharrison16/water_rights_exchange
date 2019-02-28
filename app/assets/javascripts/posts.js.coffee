@@ -18,3 +18,11 @@ jQuery(document).on 'turbolinks:load', ->
       $('#post_division_id').html(options)
     else
       $('#post_division_id').empty()
+
+jQuery(document).on 'turbolinks:load', -> 
+  $(".post-region").change ->
+    filterValue = $(this).val()
+    $(".post").hide()
+    $(".post").each (index, element) =>
+      if $(element).attr('data-type') == filterValue
+        $(element).show()

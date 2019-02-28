@@ -1,4 +1,4 @@
-<div class='col-lg-3 custom-card hvr-float'>
+<div class='post col-lg-3 custom-card hvr-float' data-type='<%= post.region.name %>'>
   <%= link_to post_path(post), class: 'no-hover' do %>
     <div id="custom-card-content">
       <% if post.purpose == 'sell' %>
