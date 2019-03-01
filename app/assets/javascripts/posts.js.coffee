@@ -26,3 +26,10 @@ jQuery(document).on 'turbolinks:load', ->
     $(".post").each (index, element) =>
       if $(element).attr('data-type') == filterValue
         $(element).show()
+
+  $(".post-division").change ->
+    filterValue = $(this).val()
+    $(".post").hide()
+    $(".post").each (index, element) =>
+      if $(element).attr('id') == filterValue
+        $(element).show()
