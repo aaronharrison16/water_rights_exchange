@@ -11,7 +11,12 @@ jQuery(document).on 'turbolinks:load', ->
 
 jQuery(document).on 'turbolinks:load', -> 
   divisions = $('#post_division_id').html()
+  $('#post_division_id').hide()
   $('#post_region_id').change ->
+    if $(".post-region").val() == 'All'
+      $('#post_division_id').hide()
+    else
+      $('#post_division_id').show()
     region = $('#post_region_id :selected').text()
     options = $(divisions).filter("optgroup[label='#{region}']").html()
     if options
