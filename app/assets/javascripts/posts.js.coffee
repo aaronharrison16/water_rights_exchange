@@ -26,6 +26,9 @@ jQuery(document).on 'turbolinks:load', ->
     $(".post").each (index, element) =>
       if $(element).attr('data-type') == filterValue
         $(element).show()
+    if filterValue == "All"
+      $(".post").each (index, element) =>
+        $(element).show()
 
   $(".post-division").change ->
     filterValue = $(this).val()
