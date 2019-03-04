@@ -12,6 +12,10 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script>
+      ScrollReveal({ reset: true});
+    </script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto" rel="stylesheet">
   </head>
@@ -22,5 +26,9 @@
     <%= yield %>
     <%= render 'shared/alerts' %>
     <%= render "shared/footer" unless @skip_footer %>
+
+    <script>
+      ScrollReveal().reveal('.homepage-section', { delay: 500})
+    </script>
   </body>
 </html>
