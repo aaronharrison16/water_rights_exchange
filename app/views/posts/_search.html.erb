@@ -1,112 +1,116 @@
-<div class="row mb-3">
-  <select name="post[region_id]" id='post_region_id' class='col-md-2 post-region btn btn-secondary m-2'>
-    <option disabled selected value style='display:none;'>Select Region</option>
-    <option id='All'>All</option>
-    <option id='Eastern'>Eastern</option>
-    <option id='Jordan River'>Jordan River</option>
-    <option id='Northern'>Northern</option>
-    <option id='Sevier River/Southern'>Sevier River/Southern</option>
-    <option id='Southeastern'>Southeastern</option>
-    <option id='Southwestern'>Southwestern</option> 
-    <option id='Utah Lake'>Utah Lake</option> 
-    <option id='Weber River/Western'>Weber River/Western</option>
-  </select> 
+<% content_for :head do %>
+  <meta name="turbolinks-cache-control" content="no-cache">
+<% end %>
 
-  <select name="post[division_id]" id="post_division_id" class='col-md-2 post-division btn btn-secondary m-2'>
-    <option disabled selected value style='display:none;'>Select Division</option>
-    <optgroup label="Eastern">
+<div class="row mb-3">
+    <select data-turbolinks-permanent id='post_region_id' class='col-md-2 post-region btn btn-secondary m-2'>
+        <option disabled selected value style='display:none;'>Select Region</option>
+        <option id='All'>All</option>
+        <option id='Eastern'>Eastern</option>
+        <option id='Jordan River'>Jordan River</option>
+        <option id='Northern'>Northern</option>
+        <option id='Sevier River/Southern'>Sevier River/Southern</option>
+        <option id='Southeastern'>Southeastern</option>
+        <option id='Southwestern'>Southwestern</option> 
+        <option id='Utah Lake'>Utah Lake</option> 
+        <option id='Weber River/Western'>Weber River/Western</option>
+    </select> 
+
+    <select id="post_division_id" class='col-md-2 post-division btn btn-secondary m-2'>
         <option disabled selected value style='display:none;'>Select Division</option>
-        <option data-name='Eastern'>Daggett</option>
-        <option data-name='Eastern'>Duchesne</option>
-        <option data-name='Eastern'>Vernal</option>
-        <option data-name='Eastern'>Little Desert</option>
-        <option data-name='Eastern'>Uintah</option>
-    </optgroup>
-    <optgroup label="Jordan River">
-        <option disabled selected value style='display:none;'>Select Division</option>
-        <option data-name='Jordan River'>East Salt Lake</option>
-        <option data-name='Jordan River'>Northwest Salt Lake</option>
-        <option data-name='Jordan River'>Central Salt Lake</option>
-        <option data-name='Jordan River'>Southwest Salt Lake</option>
-    </optgroup>
-    <optgroup label='Northern'>
-        <option disabled selected value style='display:none;'>Select Division</option>
-        <option data-name='Northern'>Box Elder West</option>
-        <option data-name='Northern'>East Fork of Bear River</option>
-        <option data-name='Northern'>Rich County</option>
-        <option data-name='Northern'>Cache County</option>
-        <option data-name='Northern'>Box Elder East</option>
-    </optgroup>
-    <optgroup label='Sevier River/Southern'>
-        <option disabled selected value style='display:none;'>Select Division</option>
-        <option data-name='Sevier River/Southern'>Circleville</option>
-        <option data-name='Sevier River/Southern'>Otter Creek</option>
-        <option data-name='Sevier River/Southern'>Panguitch</option>
-        <option data-name='Sevier River/Southern'>Richfield</option>
-        <option data-name='Sevier River/Southern'>Salina</option>
-        <option data-name='Sevier River/Southern'>Moroni</option>
-        <option data-name='Sevier River/Southern'>Mt. Pleasant</option>
-        <option data-name='Sevier River/Southern'>Fountain Green</option>
-        <option data-name='Sevier River/Southern'>Ephraim</option>
-        <option data-name='Sevier River/Southern'>Scipio</option>
-        <option data-name='Sevier River/Southern'>Levan</option>
-        <option data-name='Sevier River/Southern'>Pavant</option>
-        <option data-name='Sevier River/Southern'>Delta</option>
-        <option data-name='Sevier River/Southern'>Iron County West</option>
-        <option data-name='Sevier River/Southern'>Milford</option>
-        <option data-name='Sevier River/Southern'>Ceder City North</option>
-        <option data-name='Sevier River/Southern'>Ceder City South</option>
-        <option data-name='Sevier River/Southern'>Parowan</option>
-        <option data-name='Sevier River/Southern'>Beaver</option>
-        <option data-name='Sevier River/Southern'>St. George</option>
-        <option data-name='Sevier River/Southern'>Rockville Kolob</option>
-    </optgroup>
-    <optgroup label= 'Southeastern'>
-        <option disabled selected value style='display:none;'>Select Division</option>
-        <option data-name='Southeastern'>Grand Valley</option>
-        <option data-name='Southeastern'>Moab</option>
-        <option data-name='Southeastern'>Monticello</option>
-        <option data-name='Southeastern'>West Tavatots Plateau</option>
-        <option data-name='Southeastern'>Carbon</option>
-        <option data-name='Southeastern'>Crescent Junction</option>
-        <option data-name='Southeastern'>Emery / Castle Dale</option>
-        <option data-name='Southeastern'>Fremont Junction</option>
-        <option data-name='Southeastern'>Dark Canyon</option>
-    </optgroup>
-    <optgroup label='Southwestern'>
-        <option disabled selected value style='display:none;'>Select Division</option>
-        <option data-name='Southwestern' style='display:none;'></option>
-    </optgroup>
-    <optgroup label='Utah Lake'>
-        <option disabled selected value style='display:none;'>Select Division</option>
-        <option data-name='Utah Lake'>Payson</option>
-        <option data-name='Utah Lake'>Indianola</option>
-        <option data-name='Utah Lake'>Goshen</option>
-        <option data-name='Utah Lake'>Mona</option>
-        <option data-name='Utah Lake'>Ceder Valley</option>
-        <option data-name='Utah Lake'>Saratoga</option>
-        <option data-name='Utah Lake'>Heber</option>
-        <option data-name='Utah Lake'>Lehi</option>
-        <option data-name='Utah Lake'>Wallsburg</option>
-        <option data-name='Utah Lake'>Provo</option>
-        <option data-name='Utah Lake'>Midway</option>
-        <option data-name='Utah Lake'>Francis</option>
-    </optgroup>
-    <optgroup label='Weber River/Western'>
-        <option disabled selected value style='display:none;'>Select Division</option>
-        <option data-name='Weber River/Western'>Tooele - Grantsville</option>
-        <option data-name='Weber River/Western'>Tooele - Erda</option>
-        <option data-name='Weber River/Western'>Tooele - Lake Point</option>
-        <option data-name='Weber River/Western'>Tooele West</option>
-        <option data-name='Weber River/Western'>Ibopah</option>
-        <option data-name='Weber River/Western'>West Desert</option>
-        <option data-name='Weber River/Western'>Coleville</option>
-        <option data-name='Weber River/Western'>Kamas</option>
-        <option data-name='Weber River/Western'>Morgan</option>
-        <option data-name='Weber River/Western'>Ogden</option>
-        <option data-name='Weber River/Western'>Park City</option>
-        <option data-name='Weber River/Western'>Rush Valley</option>
-        <option data-name='Weber River/Western'>Davis County</option>
-    </optgroup>
-  </select>
+        <optgroup label="Eastern">
+            <option disabled selected value style='display:none;'>Select Division</option>
+            <option data-name='Eastern'>Daggett</option>
+            <option data-name='Eastern'>Duchesne</option>
+            <option data-name='Eastern'>Vernal</option>
+            <option data-name='Eastern'>Little Desert</option>
+            <option data-name='Eastern'>Uintah</option>
+        </optgroup>
+        <optgroup label="Jordan River">
+            <option disabled selected value style='display:none;'>Select Division</option>
+            <option data-name='Jordan River'>East Salt Lake</option>
+            <option data-name='Jordan River'>Northwest Salt Lake</option>
+            <option data-name='Jordan River'>Central Salt Lake</option>
+            <option data-name='Jordan River'>Southwest Salt Lake</option>
+        </optgroup>
+        <optgroup label='Northern'>
+            <option disabled selected value style='display:none;'>Select Division</option>
+            <option data-name='Northern'>Box Elder West</option>
+            <option data-name='Northern'>East Fork of Bear River</option>
+            <option data-name='Northern'>Rich County</option>
+            <option data-name='Northern'>Cache County</option>
+            <option data-name='Northern'>Box Elder East</option>
+        </optgroup>
+        <optgroup label='Sevier River/Southern'>
+            <option disabled selected value style='display:none;'>Select Division</option>
+            <option data-name='Sevier River/Southern'>Circleville</option>
+            <option data-name='Sevier River/Southern'>Otter Creek</option>
+            <option data-name='Sevier River/Southern'>Panguitch</option>
+            <option data-name='Sevier River/Southern'>Richfield</option>
+            <option data-name='Sevier River/Southern'>Salina</option>
+            <option data-name='Sevier River/Southern'>Moroni</option>
+            <option data-name='Sevier River/Southern'>Mt. Pleasant</option>
+            <option data-name='Sevier River/Southern'>Fountain Green</option>
+            <option data-name='Sevier River/Southern'>Ephraim</option>
+            <option data-name='Sevier River/Southern'>Scipio</option>
+            <option data-name='Sevier River/Southern'>Levan</option>
+            <option data-name='Sevier River/Southern'>Pavant</option>
+            <option data-name='Sevier River/Southern'>Delta</option>
+            <option data-name='Sevier River/Southern'>Iron County West</option>
+            <option data-name='Sevier River/Southern'>Milford</option>
+            <option data-name='Sevier River/Southern'>Ceder City North</option>
+            <option data-name='Sevier River/Southern'>Ceder City South</option>
+            <option data-name='Sevier River/Southern'>Parowan</option>
+            <option data-name='Sevier River/Southern'>Beaver</option>
+            <option data-name='Sevier River/Southern'>St. George</option>
+            <option data-name='Sevier River/Southern'>Rockville Kolob</option>
+        </optgroup>
+        <optgroup label= 'Southeastern'>
+            <option disabled selected value style='display:none;'>Select Division</option>
+            <option data-name='Southeastern'>Grand Valley</option>
+            <option data-name='Southeastern'>Moab</option>
+            <option data-name='Southeastern'>Monticello</option>
+            <option data-name='Southeastern'>West Tavatots Plateau</option>
+            <option data-name='Southeastern'>Carbon</option>
+            <option data-name='Southeastern'>Crescent Junction</option>
+            <option data-name='Southeastern'>Emery / Castle Dale</option>
+            <option data-name='Southeastern'>Fremont Junction</option>
+            <option data-name='Southeastern'>Dark Canyon</option>
+        </optgroup>
+        <optgroup label='Southwestern'>
+            <option disabled selected value style='display:none;'>Select Division</option>
+            <option data-name='Southwestern' style='display:none;'></option>
+        </optgroup>
+        <optgroup label='Utah Lake'>
+            <option disabled selected value style='display:none;'>Select Division</option>
+            <option data-name='Utah Lake'>Payson</option>
+            <option data-name='Utah Lake'>Indianola</option>
+            <option data-name='Utah Lake'>Goshen</option>
+            <option data-name='Utah Lake'>Mona</option>
+            <option data-name='Utah Lake'>Ceder Valley</option>
+            <option data-name='Utah Lake'>Saratoga</option>
+            <option data-name='Utah Lake'>Heber</option>
+            <option data-name='Utah Lake'>Lehi</option>
+            <option data-name='Utah Lake'>Wallsburg</option>
+            <option data-name='Utah Lake'>Provo</option>
+            <option data-name='Utah Lake'>Midway</option>
+            <option data-name='Utah Lake'>Francis</option>
+        </optgroup>
+        <optgroup label='Weber River/Western'>
+            <option disabled selected value style='display:none;'>Select Division</option>
+            <option data-name='Weber River/Western'>Tooele - Grantsville</option>
+            <option data-name='Weber River/Western'>Tooele - Erda</option>
+            <option data-name='Weber River/Western'>Tooele - Lake Point</option>
+            <option data-name='Weber River/Western'>Tooele West</option>
+            <option data-name='Weber River/Western'>Ibopah</option>
+            <option data-name='Weber River/Western'>West Desert</option>
+            <option data-name='Weber River/Western'>Coleville</option>
+            <option data-name='Weber River/Western'>Kamas</option>
+            <option data-name='Weber River/Western'>Morgan</option>
+            <option data-name='Weber River/Western'>Ogden</option>
+            <option data-name='Weber River/Western'>Park City</option>
+            <option data-name='Weber River/Western'>Rush Valley</option>
+            <option data-name='Weber River/Western'>Davis County</option>
+        </optgroup>
+    </select>
 </div>
