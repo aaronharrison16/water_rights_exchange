@@ -10,8 +10,8 @@ jQuery(document).on 'turbolinks:load', ->
       $(".irrigation-company-group").show()
 
 jQuery(document).on 'turbolinks:load', -> 
-  divisions = $('#post_division_id').html()
   $('#post_division_id').hide()
+  divisions = $('#post_division_id').html()
   $('#post_region_id').change ->
     if $(".post-region").val() == 'All'
       $('#post_division_id').hide()

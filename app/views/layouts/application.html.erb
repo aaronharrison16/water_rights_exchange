@@ -3,9 +3,6 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <% if content_for?(:head) %>
-      <%= yield(:head) %>
-    <% end %>
 
     <title>Utah Water Right Exchange</title>
     <%= csrf_meta_tags %>
@@ -31,7 +28,7 @@
     <%= render "shared/footer" unless @skip_footer %>
 
     <script>
-      ScrollReveal().reveal('.homepage-section', { delay: 80})
+      ScrollReveal().reveal('.homepage-section')
     </script>
   </body>
 </html>
