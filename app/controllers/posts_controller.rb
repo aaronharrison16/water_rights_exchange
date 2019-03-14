@@ -14,7 +14,7 @@ class PostsController < ApplicationController
   end
 
   def sold_posts
-    @posts = Post.result.sold.recent_update
+    @posts = Post.sold.recent_update
   end
 
   def new
