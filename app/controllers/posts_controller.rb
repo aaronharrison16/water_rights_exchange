@@ -4,8 +4,7 @@ class PostsController < ApplicationController
   access all: [:show, :index], user: {except: [:approve, :sold, :sold_posts]}, site_admin: :all
 
   def index
-    @search = Post.search(params[:q])
-    @posts = @search.result.approved.sale_pending.recent
+    @posts = Post.approved.sale_pending.recent
   end
 
   def my_posts
