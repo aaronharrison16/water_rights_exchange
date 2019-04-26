@@ -1,7 +1,6 @@
 @import 'bootstrap';
 @import 'gritter';
 @import "bourbon";
-@import "admin_homepage.css";
 
 html,
 body {
@@ -268,7 +267,7 @@ html {
 
 #homepage-header {
   background-color: white;
-  border-radius: 250px;
+  border-radius: 15px;
   padding: 15px;
   position: relative;
   width: 80%;
@@ -337,13 +336,9 @@ html {
  }
 
  @media (max-width: 768px) {
-  #homepage-header {
-    border-radius: 10px;
-  }
-
   #homepage-body {
-  position: relative;
-  top: 50px;
+    position: relative;
+    top: 50px;
   }
  }
 
@@ -515,7 +510,7 @@ html {
   font-size:2.1em;
   background: #f8f9fa;
   width: 140px;
-  border-radius: 80px;
+  border-radius: 15px;
   color: #4dd0e1;
   border: 3px solid #4dd0e1;
   width: 10em;
@@ -544,6 +539,14 @@ html {
 
 #homepage-buttons { 
   padding-bottom: 100px;
+}
+
+.homepage-section {
+  border-radius: 15px;
+  padding: 25px;
+  margin-bottom: 25px;
+  background-color: #5FBCFD;
+  
 }
 
 .comment-card {
