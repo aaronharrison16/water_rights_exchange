@@ -18,7 +18,7 @@
 </div>
  
 <div class="container-fluid" id='homepage-body'> 
-  <div class="text-center mb-5" id='homepage-buttons'>
+  <div class="text-center" id='homepage-buttons'>
     <%= link_to 'View Listings', posts_path, class: 'btn btn-home' %>
     <% if current_user.try(:type) == 'GuestUser' %>
       <%= link_to "Sign In", new_user_session_path, class: 'btn btn-home secondary mx-4 col-md-6'  %>
