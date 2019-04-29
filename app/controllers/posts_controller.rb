@@ -29,7 +29,6 @@ class PostsController < ApplicationController
 
     if @post.save
       redirect_to @post, notice: "Your post was created successfully."
-      AdminMailer.email.deliver
     else
       render :new
     end
@@ -63,7 +62,6 @@ class PostsController < ApplicationController
     authorize @post
     @post.approved!
     redirect_to root_path, notice: 'This listing has been approved.'
-    PostApprovedMailer.email(@post.user.email).deliver
   end
 
   def sold
