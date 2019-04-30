@@ -14,16 +14,16 @@
 
 <div id='homepage-header'>
   <h3 class="display-4 text-center mt-3 mb-4">Utah Water Right Exchange</h3>
-  <p class="lead text-center m-4">As the best water right brokerage service in the State of Utah, we strive to serve as a one stop shop for buying and selling water rights.</p>
+  <h1 class="lead text-center m-4">As the best water right brokerage service in the State of Utah, we strive to serve as a one stop shop for buying and selling water rights.</h1>
 </div>
  
 <div class="container-fluid" id='homepage-body'> 
   <div class="text-center" id='homepage-buttons'>
     <%= link_to 'View Listings', posts_path, class: 'btn btn-home' %>
     <% if current_user.try(:type) == 'GuestUser' %>
-      <%= link_to "Sign In", new_user_session_path, class: 'btn btn-home secondary mx-4 col-md-6'  %>
+      <%= link_to "Sign In", new_user_session_path, class: 'btn btn-home secondary col-md-6'  %>
     <% else %>
-      <%= link_to "Create a Listing", new_post_path, class: 'btn btn-home secondary mx-4 col-md-6' %>
+      <%= link_to "Create a Listing", new_post_path, class: 'btn btn-home secondary col-md-6' %>
     <% end %>
   </div>
 
@@ -123,16 +123,14 @@
     </div>
   </div>
 
-  <hr class="m-5">
-
-  <p class="text-center mb-5">
-    <%= link_to 'View Listings', posts_path, class: 'btn btn-custom mr-2' %>
+  <div class="text-center mt-3" id='homepage-buttons'>
+    <%= link_to 'View Listings', posts_path, class: 'btn btn-home' %>
     <% if current_user.try(:type) == 'GuestUser' %>
-      <%= link_to "Sign In", new_user_session_path, class: 'btn btn-secondary-custom'  %>
+      <%= link_to "Sign In", new_user_session_path, class: 'btn btn-home secondary col-md-6'  %>
     <% else %>
-      <%= link_to "Create a Listing", new_post_path, class: 'btn btn-secondary-custom' %>
+      <%= link_to "Create a Listing", new_post_path, class: 'btn btn-home secondary col-md-6' %>
     <% end %>
-  </p>
+  </div>
 </div>
 
 <% non_footer_action %>

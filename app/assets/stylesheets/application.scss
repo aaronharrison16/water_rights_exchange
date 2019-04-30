@@ -304,7 +304,7 @@ html {
 
 #homepage-body {
   position: absolute;
-  top: 840px;
+  top: 800px;
 }
 
 #admin-homepage {
@@ -517,6 +517,7 @@ html {
   letter-spacing: 1px;
   cursor: pointer;
   transition: all 0.25s ease;
+  margin: 12px;
   &:hover {
     background: #4dd0e1;
     color: white;
@@ -538,7 +539,7 @@ html {
 }
 
 #homepage-buttons { 
-  padding-bottom: 100px;
+  padding-bottom: 50px;
 }
 
 .homepage-section {
