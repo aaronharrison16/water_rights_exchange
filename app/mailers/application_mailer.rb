@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: "utahwaterrightexchange@gmail.com"
+  default from: "no-reply@utahwaterrightexchange.com"
   layout 'mailer'
 end
