@@ -480,8 +480,8 @@ html {
 .btn-mark-sold {
   position: fixed;
   right: 2%;
-  top: 10%;
-  
+  bottom: 5%;
+  z-index: 3;
   outline: none;
   padding: .5em;
   font-size:1.5em;
@@ -564,4 +564,15 @@ html {
 #contact {
   padding-top:15px;
   padding-left:15px;
+}
+
+.return-to-listings {
+  position: relative;
+  left: 55px;
+  top: 30px;
+  color: black;
+
+  &:hover {
+    color: #5FBCFD
+  }
 }
