@@ -1,25 +1,28 @@
 <% if current_user.try(:type) == 'AdminUser' %>
-    <div class="text-center show-container">
-        <div class="card mb-4 box-shadow">
-            <div class="card-header">
-                <h4 class="my-0 font-weight-normal">
-                    Posted by: <%= @post.user.full_name %>
-                </h4>
-
-                <h5 class="posted-by-card">
-                    Email: <%= @post.user.email %>
-                </h5>
-            
-                <h5 class="posted-by-card float-left">
-                    Phone: <%= number_to_phone((@post.user.phone).to_i, area_code: true) %>
-                </h5>
-
-                <% if @post.right_number != "" %>
-                    <h5 class="posted-by-card float-right alert alert-secondary">
-                        Water Right Number: <%= @post.right_number %>
+    <div class='row'>
+        <div class="col-md-6">
+            <div class='card'>
+                <div class='card-body'>
+                    <h5>
+                        Posted by: <%= @post.user.full_name %>
                     </h5>
-                <% end %>
+
+                    <h5>
+                        Email: <%= @post.user.email %>
+                    </h5>
+                
+                    <h5>
+                        Phone: <%= number_to_phone((@post.user.phone).to_i, area_code: true) %>
+                    </h5>
+                </div>    
             </div>
+        </div>
+        <div class="col-md-6">
+            <% if @post.right_number != "" %>
+                <h5 class="float-right alert alert-secondary">
+                    Water Right Number: <%= @post.right_number %>
+                </h5>
+            <% end %>
         </div>
     </div>
 <% end %>
