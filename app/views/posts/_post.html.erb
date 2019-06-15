@@ -10,11 +10,11 @@
       <div class='card-body'>
         <% if post.irrigation_company != "" %>
           <p class='card-text'>
-            Irrigation Company: <%= post.irrigation_company %>
+            <%= post.irrigation_company %>
           </p> 
         <% end %>
         <p>
-          Description: <%= truncate(post.title, :length => 30) %>
+          Description: <%= truncate(post.title, :length => 40) %>
         </p>
         <p class='card-text'>
           $<%= post.price %> 
